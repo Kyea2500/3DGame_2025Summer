@@ -1,5 +1,6 @@
 #include "Pad.h"
 #include "DxLib.h"
+#include <cassert>
 
 namespace
 {
@@ -30,4 +31,26 @@ namespace PadInput
 		bool isLast = (lastInput & button);
 		return (isNow && !isLast);
 	}
+}
+
+Pad::Pad()
+{
+	memset(&m_joyPad, 0, sizeof(m_joyPad)); // ƒ[ƒ‰Šú‰»
+	m_prevJoyPad = m_joyPad; // ‘O‰ñ‚Ìó‘Ô‚ğ•Û‘¶
+}
+
+Pad::~Pad()
+{
+}
+
+void Pad::Update()
+{
+	m_prevJoyPad = m_joyPad;
+	// “ü—Íó‘Ô‚ğæ“¾
+	if (GetJoypadDirectInputState(DX_INPUT_PAD1, &m_joyPad))
+	{
+		assert(false && "Error: Failed to get joypad state.");
+		return;
+	}
+
 }
