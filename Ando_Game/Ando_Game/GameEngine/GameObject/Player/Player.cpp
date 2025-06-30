@@ -100,7 +100,7 @@ void Player::Final()
 
 void Player::UpdateJump()
 {
-	if (Pad::IsTrigger(PAD_INPUT_1)) // ジャンプボタンが押されたら
+	if (PadInput::IsTrigger(PAD_INPUT_1)) // ジャンプボタンが押されたら
 	{
 		if (m_isJump < 2) // 1段目または2段目のジャンプ中でない場合
 		{
@@ -127,17 +127,17 @@ void Player::UpdateMove()
 	m_isMoveLeft = false;
 
 	// 上下左右の入力に応じて移動ベクトルを更新
-	if (Pad::IsPress(PAD_INPUT_UP))
+	if (PadInput::IsPress(PAD_INPUT_UP))
 	{
 		// 上に移動
 		m_vec.z += speed;
 	}
-	if (Pad::IsPress(PAD_INPUT_DOWN))
+	if (PadInput::IsPress(PAD_INPUT_DOWN))
 	{
 		// 下に移動
 		m_vec.z -= speed;
 	}
-	if (Pad::IsPress(PAD_INPUT_LEFT))
+	if (PadInput::IsPress(PAD_INPUT_LEFT))
 	{
 		// 左に移動
 		m_vec.x -= speed;
@@ -145,7 +145,7 @@ void Player::UpdateMove()
 		m_isMoveLeft = true;
 		m_isMoveRight = false;
 	}
-	if (Pad::IsPress(PAD_INPUT_RIGHT))
+	if (PadInput::IsPress(PAD_INPUT_RIGHT))
 	{
 		// 右に移動
 		m_vec.x += speed;

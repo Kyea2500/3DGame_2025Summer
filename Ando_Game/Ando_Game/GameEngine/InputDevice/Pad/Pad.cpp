@@ -7,7 +7,7 @@ namespace
 	int lastInput = 0; // ひとつ前のフレームのパッド入力
 }
 
-namespace Pad
+namespace PadInput
 {
 	void Update()
 	{

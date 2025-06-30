@@ -1,6 +1,7 @@
 #pragma once
+#include <DxLib.h>
 
-namespace Pad
+namespace PadInput
 {
 	// プロトタイプ宣言
 
@@ -24,6 +25,39 @@ namespace Pad
 	/// <returns>ボタンが押された瞬間true,それ以外はfalse</returns>
 	bool IsTrigger(int button);
 
-	
 }
+enum class PadButton
+{
+	A =0,
+	B,
+	X,
+	Y,
+	LB,
+	RB,
+	BACK,
+	START,
+	STICKBL,
+	STICKBR
+};
 
+enum class PadPOVDirection
+{
+	UP = PAD_INPUT_UP,
+	RIGHT = PAD_INPUT_RIGHT,
+	DOWN = PAD_INPUT_DOWN,
+	LEFT = PAD_INPUT_LEFT,
+
+};
+
+
+
+//class Pad
+//{
+//private:
+//	DINPUT_JOYSTATE m_joyPad;
+//
+//public:
+//	Pad();
+//	~Pad();
+//	void Update(); // パッドの入力状態を更新
+//};

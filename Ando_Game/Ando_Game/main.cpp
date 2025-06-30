@@ -1,5 +1,11 @@
 #include "DxLib.h"
 #include"GameEngine/InputDevice/Game.h"
+#include"GameEngine/Scene/SceneMain/SceneMain.h"
+
+namespace
+{
+	constexpr int MaxTime = 16667;
+}
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -7,6 +13,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// フルスクリーンではなく、ウィンドウモードで開くようにする
 	ChangeWindowMode(Game::kDefaultWindowMode);
 	SetWindowText("<Untitle>");
+	SceneMain Scene;
+	Scene.Init();
+
+
+
 
 	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
 	{
@@ -25,7 +36,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 
 		// ここにゲームの処理を書く
-		DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
+		Scene.Update();		// シーンの更新処理
+		Scene.Draw();		// シーンの描画処理
 		
 
 
@@ -38,7 +50,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		// escキーで終了(いったん終了)
 		if (CheckHitKey(KEY_INPUT_ESCAPE))	break;
 
-		while (GetNowHiPerformanceCount() - time)
+		while (GetNowHiPerformanceCount() - time< MaxTime)
 		{
 		}
 
@@ -47,6 +59,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	WaitKey();				// キー入力待ち
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
+	Scene.End();			// シーンの終了処理
 
 	return 0;				// ソフトの終了 
 }

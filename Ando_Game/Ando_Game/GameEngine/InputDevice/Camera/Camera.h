@@ -15,9 +15,9 @@ public:
 	Camera(std::shared_ptr<Transform>& _transform);
 
 	void Init(); // 初期化関数
-	void End(); // 終了関数
+	void End() {}; // 終了関数
 	void Update(); // 更新関数
-	void Draw(); // 描画関数
+	void Draw() {}; // 描画関数
 
 	void SetTarget(const VECTOR& _target) { m_target = _target; }
 	VECTOR GetTarget() const { return m_target; }
