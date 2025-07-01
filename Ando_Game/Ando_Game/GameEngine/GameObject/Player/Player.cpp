@@ -69,23 +69,26 @@ void Player::Update()
 	UpdateJump();
 	// 移動の更新
 	UpdateMove();
+
 	// プレイヤーの位置を更新
 	MV1SetPosition(m_modelHandle,m_transform->GetPosition());
 }
 
 VECTOR Player::GetColPos() const
 {
-	return VECTOR();
+	VECTOR result = m_transform->GetPosition();
+	result.y += 160.0f;
+	return result;
 }
 
 float Player::GetColRadius() const
 {
-	return 0.0f;
+	return  kColRadius;
 }
 
 float Player::GetColRadiusSign() const
 {
-	return 0.0f;
+	return kColRadiusSign;
 }
 
 void Player::Draw()
@@ -106,7 +109,8 @@ void Player::UpdateJump()
 		{
 			m_isJump++; // ジャンプ状態を更新
 			m_isSky = true; // 空中にいる状態にする
-			m_vec.y = kJumpPower; // ジャンプ力を適用
+			//m_vec.y = kJumpPower; // ジャンプ力を適用
+			m_velocity->SetVelocityY(kJumpPower); // ジャンプ力を適用
 		}
 
 	}
@@ -114,7 +118,8 @@ void Player::UpdateJump()
 	{
 		m_isJump = 0; // ジャンプ状態をリセット
 		m_isSky = false; // 空中状態を解除
-		m_vec.y += kGravity; // 重力を適用
+		//m_vec.y += kGravity; // 重力を適用
+		m_velocity->SetVelocityY(m_velocity->GetVelocityY() + kGravity); // 重力を適用
 	}
 }
 
@@ -130,34 +135,35 @@ void Player::UpdateMove()
 	if (PadInput::IsPress(PAD_INPUT_UP))
 	{
 		// 上に移動
-		m_vec.z += speed;
+		//m_vec.z += speed;
+		m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() + kMoveAccel);
 	}
 	if (PadInput::IsPress(PAD_INPUT_DOWN))
 	{
 		// 下に移動
-		m_vec.z -= speed;
+	//	m_vec.z -= speed;
+		m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() - kMoveAccel);
 	}
 	if (PadInput::IsPress(PAD_INPUT_LEFT))
 	{
 		// 左に移動
-		m_vec.x -= speed;
-		// 左を向いている
-		m_isMoveLeft = true;
-		m_isMoveRight = false;
+	//	m_vec.x -= speed;
+		m_velocity->SetVelocityX(m_velocity->GetVelocityX() - kMoveAccel);
 	}
 	if (PadInput::IsPress(PAD_INPUT_RIGHT))
 	{
 		// 右に移動
-		m_vec.x += speed;
-		// 右を向いている
-		m_isMoveRight = true;
-		m_isMoveLeft = false;
+//		m_vec.x += speed;
+		m_velocity->SetVelocityX(m_velocity->GetVelocityX() + kMoveAccel);
+ 
 	}
 	// 位置を更新
-	m_pos = VecAdd(m_pos, m_vec);
+	/*m_pos = VecAdd(m_pos, m_vec);*/
+
+	m_transform->SetPosition(VAdd(m_transform->GetPosition(), m_velocity->GetVelocity()));
 }
 
 bool Player::isJumping() const
 {
-	return false;
+	return  (m_transform->GetPosition().y > 0.0f);
 }

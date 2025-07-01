@@ -13,8 +13,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// フルスクリーンではなく、ウィンドウモードで開くようにする
 	ChangeWindowMode(Game::kDefaultWindowMode);
 	SetWindowText("<Untitle>");
-	SceneMain Scene;
-	Scene.Init();
+	std::shared_ptr<SceneMain> Scene = std::make_shared<SceneMain>();	// シーンのインスタンスを作成
+	Scene->Init();
 
 
 
@@ -36,8 +36,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 
 		// ここにゲームの処理を書く
-		Scene.Update();		// シーンの更新処理
-		Scene.Draw();		// シーンの描画処理
+		Scene->Update();		// シーンの更新処理
+		Scene->Draw();		// シーンの描画処理
 		
 
 
@@ -59,7 +59,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	WaitKey();				// キー入力待ち
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
-	Scene.End();			// シーンの終了処理
+	Scene->End();			// シーンの終了処理
 
 	return 0;				// ソフトの終了 
 }

@@ -17,7 +17,7 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("../../data/model/player.mv1 ");
+	m_playerHandle = MV1LoadModel("../data/model/Player.mv1");
 	// m_enemyHandle = MV1LoadModel("data/model/Enemy.mv1"); // 敵のモデルを読み込む（必要ならコメントアウトを外す）
 
 	// プレイヤーの初期化

@@ -149,14 +149,15 @@
   <ItemGroup>
     <ClCompile Include="GameEngine\InputDevice\Camera\Camera.cpp" />
     <ClCompile Include="GameEngine\Scene\SceneClera\SceneClear .cpp" />
+    <ClCompile Include="GameEngine\InputDevice\InputManager\InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameEngine\GameObject\Player\Player.cpp" />
     <ClCompile Include="GameEngine\InputDevice\Pad\Pad.cpp" />
     <ClCompile Include="GameEngine\Scene\Manager\SceneManager.cpp" />
     <ClCompile Include="GameEngine\Scene\SceneTitle\SceneTitle.cpp" />
     <ClCompile Include="GameEngine\Scene\SceneMain\SceneMain.cpp" />
-    <ClCompile Include="GameEngine\Parts\Velocity\Velocity.cpp" />
     <ClCompile Include="GameEngine\Vector3\Vector3.cpp" />
+    <ClCompile Include="GameEngine\GameObject\Map\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngine\InputDevice\Camera\Camera.h" />
@@ -171,6 +172,8 @@
     <ClInclude Include="GameEngine\Scene\SceneClera\SceneClear .h" />
     <ClInclude Include="GameEngine\Parts\Velocity\Velocity.h" />
     <ClInclude Include="GameEngine\Vector3\Vector3.h" />
+    <ClInclude Include="GameEngine\InputDevice\InputManager\InputManager.h" />
+    <ClInclude Include="GameEngine\GameObject\Map\Map.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
