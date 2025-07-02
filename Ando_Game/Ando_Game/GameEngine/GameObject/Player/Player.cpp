@@ -4,7 +4,7 @@
 namespace
 {
 	// プレイヤーの移動速度
-	constexpr float kPlayerSpeed = 25.0f;
+	constexpr float kPlayerSpeed = 15.0f;
 
 	// プレイヤーの当たり判定半径
 	constexpr float kColRadius = 85.0f;
@@ -26,7 +26,7 @@ namespace
 	// プレイヤーの移動加速度
 	constexpr float kMoveAccel = 2.50f;
 	// 移動減速率
-	constexpr float kMoveDecRate = 0.70f;
+	constexpr float kMoveDecRate = 0.80f;
 
 }
 
@@ -54,7 +54,7 @@ void Player::Update()
 	// m_vec.x *= kMoveDecRate;
 	m_velocity->SetVelocityX(m_velocity->GetVelocityX() * kMoveDecRate);// X軸の速度を減速
 		// m_vec.z *= kMoveDecRate;
-		m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
+	m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
 
 	MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
 	// 当たり判定の描画
@@ -151,7 +151,14 @@ void Player::UpdateMove()
 {
 	// プレイヤーの移動処理
 	m_isMove = false; // 移動中フラグを初期化
-	// 移動速度を取得
+
+	if (!m_isMove)
+	{
+		//m_vec.x = 0.0f; // 水平方向の移動ベクトルをリセット
+		m_velocity->SetVelocityX(0.0f); // X軸の速度をリセット
+		//m_vec.z = 0.0f; // 垂直方向の移動ベクトルをリセット
+		m_velocity->SetVelocityZ(0.0f); // Z軸の速度をリセット
+	}
 
 	// 上下左右の入力に応じて移動ベクトルを更新
 	if (PadInput::IsPress(PAD_INPUT_UP))
@@ -188,8 +195,8 @@ void Player::UpdateMove()
 	if (m_velocity->GetVelocityX() != 0.0f || m_velocity->GetVelocityZ() != 0.0f)
 	{
 		/*float length = sqrtf(m_vec.x * m_vec.x + m_vec.z * m_vec.z);*/
-		float length = sqrtf(m_transform->GetPosition().x * m_transform->GetPosition().x +
-			m_transform->GetPosition().z * m_transform->GetPosition().z);
+		float length = sqrtf(m_velocity->GetVelocityX() * m_velocity->GetVelocityX() +
+			m_velocity->GetVelocityZ() * m_velocity->GetVelocityZ());
 
 		if (length > 0.0f)
 		{

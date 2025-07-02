@@ -11,6 +11,7 @@ private:
 	float m_cosParam; // 水平角度のコサイン値
 	float m_horizontalAngle; // 水平角度
 	float m_verticalAngle; // 垂直角度
+	std::shared_ptr<Player> m_pPlayer; // プレイヤーのポインタ
 
 public:
 	Camera();
