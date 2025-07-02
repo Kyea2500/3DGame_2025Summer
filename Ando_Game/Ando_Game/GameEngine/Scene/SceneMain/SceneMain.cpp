@@ -1,6 +1,21 @@
 #include "SceneMain.h"
 #include "DxLib.h"
 #include "../../GameObject/Player/Player.h"
+#include "../../InputDevice/Camera/Camera.h"
+#include"../../Parts/Transform/transform.h"
+
+
+namespace
+{
+	// グリッドのサイズ
+	constexpr int kGridSize = 100;
+	// グリッドの範囲
+	constexpr int kGridRange = 500;
+	// 縦グリッドの色
+	constexpr int kGridColorZ = 0xff0000; // 赤色
+	// 横グリッドの色
+	constexpr int kGridColorX = 0x0000ff; // 青色
+}
 
 SceneMain::SceneMain()
 	:m_playerHandle(-1), // プレイヤーのハンドルを初期化 
@@ -17,7 +32,7 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("../data/model/Player.mv1");
+	m_playerHandle = MV1LoadModel("data/model/Player.mv1");
 	// m_enemyHandle = MV1LoadModel("data/model/Enemy.mv1"); // 敵のモデルを読み込む（必要ならコメントアウトを外す）
 
 	// プレイヤーの初期化
@@ -28,10 +43,11 @@ void SceneMain::Init()
 	// m_pEnemy = std::make_shared<enemy>();
 	// m_pEnemy->SetModel(m_enemyHandle); // 敵のモデルハンドルを設定
 	// m_pEnemy->Init(); // 敵の初期化
+	Transform transform; // Transformオブジェクトを作成
 
 	// カメラの初期化
-	//m_pCamera = std::make_shared<Camera>();
-	//m_pCamera->Init(); // カメラの初期化
+	m_pCamera=std::make_shared<Camera>();
+	m_pCamera->Init(); // カメラの初期化
 
 
 }
@@ -47,8 +63,8 @@ void SceneMain::Update()
 	// プレイヤーの更新処理
 	m_pPlayer->Update();
 	// カメラの更新処理
-	//m_pCamera->Update(); // カメラの更新
-	//
+	m_pCamera->Update(); // カメラの更新
+	
 	// 敵の更新処理
 	// m_pEnemy->Update(); // 敵の更新（必要ならコメントアウトを外す）
 }
@@ -66,12 +82,12 @@ void SceneMain::Draw()
 
 void SceneMain::DrawGrid() const
 {
-	for (int z = -500; z <= 500; z += 100)
+	for (int z = -kGridRange; z <= kGridRange; z += kGridSize)
 	{
-		DrawLine3D(VGet(-500, 0, z), VGet(500, 0, z), 0xff0000);
+		DrawLine3D(VGet(-kGridRange, 0, z), VGet(kGridRange, 0, z), 0xff0000);
 	}
-	for (int x = -500; x <= 500; x += 100)
+	for (int x = -kGridRange; x <= kGridRange; x += kGridSize)
 	{
-		DrawLine3D(VGet(x, 0, -500), VGet(x, 0, 500), 0x0000ff);
+		DrawLine3D(VGet(x, 0, -kGridRange), VGet(x, 0, kGridRange), 0x0000ff);
 	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include"../../Parts/Transform/transform.h"
 #include<memory>
+class Player;
 class Camera
 {
 private:
@@ -12,13 +13,14 @@ private:
 	float m_verticalAngle; // 垂直角度
 
 public:
-	Camera(std::shared_ptr<Transform>& _transform);
+	Camera();
 
 	void Init(); // 初期化関数
 	void End() {}; // 終了関数
 	void Update(); // 更新関数
 	void Draw() {}; // 描画関数
 
+	// カメラの変形情報を取得
 	void SetTarget(const VECTOR& _target) { m_target = _target; }
 	VECTOR GetTarget() const { return m_target; }
 	
