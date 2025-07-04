@@ -13,6 +13,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// フルスクリーンではなく、ウィンドウモードで開くようにする
 	ChangeWindowMode(Game::kDefaultWindowMode);
 	SetWindowText("<Untitle>");
+	// 画面サイズ
+	SetGraphMode(Game::kScreenWidth, Game::kScreenHeight, Game::kColorBitNum);
+
+
+
 	std::shared_ptr<SceneMain> Scene = std::make_shared<SceneMain>();	// シーンのインスタンスを作成
 	Scene->Init();
 

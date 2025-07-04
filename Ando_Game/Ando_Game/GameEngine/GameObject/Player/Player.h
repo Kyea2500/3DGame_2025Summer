@@ -40,12 +40,13 @@ public:
 	void Init();
 	void SetModel(int model) { m_modelHandle = model; }
 	void Update();
+	// ‹r‚ª’n–Ê‚ÉÚG‚µ‚Ä‚¢‚é‚©
+	bool IsGrounded() const { return m_isSky == false; }
 	VECTOR GetPos() const { return m_transform->GetPosition(); }
 	VECTOR GetColPos() const;
 	float GetColRadius() const;
 	float GetColRadiusSign() const;
 	void Draw();
 	void Final();
-	
 };
 

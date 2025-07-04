@@ -4,7 +4,7 @@
 namespace
 {
 	// プレイヤーの移動速度
-	constexpr float kPlayerSpeed = 15.0f;
+	constexpr float kPlayerSpeed = 40.0f;
 
 	// プレイヤーの当たり判定半径
 	constexpr float kColRadius = 85.0f;
@@ -24,7 +24,7 @@ namespace
 	constexpr float kJumpPower = 22.0f;
 
 	// プレイヤーの移動加速度
-	constexpr float kMoveAccel = 2.50f;
+	constexpr float kMoveAccel = 6.00f;
 	// 移動減速率
 	constexpr float kMoveDecRate = 0.80f;
 
@@ -56,7 +56,7 @@ void Player::Update()
 		// m_vec.z *= kMoveDecRate;
 	m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
 
-	MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
+	/*MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));*/
 	// 当たり判定の描画
 	DrawSphere3D(
 		GetColPos(),
@@ -117,6 +117,7 @@ void Player::Draw()
 {
 	// プレイヤーのモデルを描画する
 	MV1DrawModel(m_modelHandle);
+	MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
 }
 
 void Player::Final()
