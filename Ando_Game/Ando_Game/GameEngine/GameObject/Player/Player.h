@@ -1,9 +1,6 @@
 #pragma once
 #include "../Base/GameObject.h"
 #include "../../Vector3/Vector3.h"
-#include "../../Parts/Transform/transform.h"
-#include "../../Parts/Velocity/Velocity.h"
-
 class Player : public GameObject
 {
 private:

@@ -86,9 +86,13 @@ void Player::Update()
 		m_velocity->SetVelocityY(0.0f); // ジャンプしていない場合はY軸の速度を0にする
 		m_transform->SetPositionY(0.0f); // 地面に戻す
 	}
-	PadInput::Update(); // パッドの入力を更新
+
+	// パッドの入力を更新
+	PadInput::Update(); 
+
 	// ジャンプの更新
 	UpdateJump();
+
 	// 移動の更新
 	UpdateMove();
 
@@ -117,11 +121,19 @@ void Player::Draw()
 {
 	// プレイヤーのモデルを描画する
 	MV1DrawModel(m_modelHandle);
-	MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
+	//MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
 }
 
 void Player::Final()
 {
+	// プレイヤーのモデルを削除する
+	if (m_modelHandle != -1)
+	{
+		MV1DeleteModel(m_modelHandle);
+		m_modelHandle = -1; // モデルハンドルを無効化
+	}
+	m_transform.reset(); // Transformオブジェクトをリセット
+	m_velocity.reset(); // Velocityオブジェクトをリセット
 }
 
 void Player::UpdateJump()

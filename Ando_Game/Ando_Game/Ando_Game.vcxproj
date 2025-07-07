@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameEngine\GameObject\Enemy\Enemy.cpp" />
     <ClCompile Include="GameEngine\InputDevice\Camera\Camera.cpp" />
     <ClCompile Include="GameEngine\Scene\SceneClera\SceneClear .cpp" />
     <ClCompile Include="GameEngine\InputDevice\InputManager\InputManager.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="GameEngine\GameObject\Map\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameEngine\GameObject\Enemy\Enemy.h" />
     <ClInclude Include="GameEngine\InputDevice\Camera\Camera.h" />
     <ClInclude Include="GameEngine\GameObject\Base\GameObject.h" />
     <ClInclude Include="GameEngine\InputDevice\Game.h" />

@@ -1,8 +1,8 @@
 #pragma once
 #include <DxLib.h>
-#include"../../Parts/Transform/transform.h"
+#include"../Base/GameObject.h"
 #include <memory>
-class Map
+class Map : public GameObject
 {
 private:
 	int m_mapHandle; // マップのモデルハンドル
