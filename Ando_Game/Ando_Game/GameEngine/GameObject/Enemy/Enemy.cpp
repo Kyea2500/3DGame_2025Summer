@@ -1,5 +1,15 @@
 #include "Enemy.h"
 
+namespace
+{
+	// “G‚Ì“–‚½‚è”»’è”¼Œa
+	constexpr float kColRadius = 50.0f; // “G‚Ì“–‚½‚è”»’è”¼Œa
+	// “G‚Ì“–‚½‚è”»’è‚ÌF
+	constexpr int kEnemyColor = 16; // “G‚Ì“–‚½‚è”»’è‚ÌF
+	// “G‚ÌˆÚ“®‘¬“x
+	constexpr float kEnemySpeed = 30.0f; // “G‚ÌˆÚ“®‘¬“x
+}
+
 Enemy::Enemy() : m_modelHandle(-1),
 m_transform(std::make_shared<Transform>())
 {
@@ -35,6 +45,13 @@ void Enemy::Update()
 		m_transform->SetRotation({ 0.f, 0.f, 0.f }); // ƒ‚ƒfƒ‹‚ª‚È‚¢ê‡‚Í‰Šú‰ñ“]‚É–ß‚·
 	}
 
+	DrawSphere3D(
+		GetColPos(),
+		GetColRadius(),
+		kEnemyColor,
+		0xff00ff,
+		0xff00ff,
+		false);
 }
 
 void Enemy::Draw()
@@ -51,15 +68,13 @@ void Enemy::Draw()
 
 VECTOR Enemy::GetColPos() const
 {
-	return VECTOR();
+	VECTOR result = m_transform->GetPosition();
+	/*result.y += 160.0f;*/
+	return result;
 }
 
 float Enemy::GetColRadius() const
 {
-	return 0.0f;
+	return  kColRadius;
 }
 
-float Enemy::GetColRadiusSign() const
-{
-	return 0.0f;
-}

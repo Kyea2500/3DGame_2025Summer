@@ -80,6 +80,10 @@ void SceneMain::Update()
 	 m_pEnemy->Update(); // 敵の更新
 	// マップの更新処理
 	m_pMap->Update(); // マップの更新
+
+	// プレイヤーと敵との当たり判定
+
+
 }
 
 void SceneMain::Draw()

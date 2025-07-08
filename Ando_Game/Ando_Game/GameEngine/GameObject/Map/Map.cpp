@@ -5,7 +5,7 @@ namespace
 	// グリッドのサイズ
 	constexpr int kGridSize = 100;
 	// グリッドの範囲
-	constexpr int kGridRange = 500;
+	constexpr int kGridRange = 1200;
 	// 縦グリッドの色
 	constexpr int kGridColorZ = 0xff0000; // 赤色
 	// 横グリッドの色

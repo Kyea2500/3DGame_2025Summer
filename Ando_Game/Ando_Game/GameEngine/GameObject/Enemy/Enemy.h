@@ -22,7 +22,6 @@ public:
 	void Draw();
 	VECTOR GetColPos() const; // 当たり判定の位置を取得
 	float GetColRadius() const; // 当たり判定の半径を取得
-	float GetColRadiusSign() const; // 立札の当たり判定半径を取得
 
 public:
 	// 敵がプレイヤーの位置まで突撃できるように、
