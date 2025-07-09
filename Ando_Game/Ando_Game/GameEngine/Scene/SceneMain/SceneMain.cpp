@@ -8,12 +8,13 @@
 
 
 SceneMain::SceneMain()
-	:m_playerHandle(-1), // プレイヤーのハンドルを初期化 
-	m_mapHandle(-1), // マップのハンドルを初期化
+	:m_playerHandle(-1),// プレイヤーのハンドルを初期化 
+	m_enemyHandle(-1),	// 敵のハンドルを初期化
+	m_mapHandle(-1),	// マップのハンドルを初期化
 	m_pPlayer(nullptr), // プレイヤーのポインタを初期化
-	m_pEnemy(nullptr),    // 敵のポインタを初期化
+	m_pEnemy(nullptr),	// 敵のポインタを初期化
 	m_pCamera(nullptr), // カメラのポインタを初期化
-	m_pMap(nullptr) // マップのポインタを初期化
+	m_pMap(nullptr)		// マップのポインタを初期化
 {
 }
 
@@ -24,8 +25,7 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("../../../../model/player.mv1");
-	m_mapHandle = MV1LoadModel("data/model/Map.mv1");
+	m_playerHandle = MV1LoadModel("data/model/Player.mv1"); // プレイヤーのモデルを読み込み
 
 	// プレイヤーの初期化
 	m_pPlayer = std::make_shared<Player>();
@@ -53,15 +53,15 @@ void SceneMain::End()
 	MV1DeleteModel(m_playerHandle); // プレイヤーのモデルを削除
 	MV1DeleteModel(m_mapHandle); // マップのモデルを削除
 	 MV1DeleteModel(m_enemyHandle); // 敵のモデルを削除（必要ならコメントアウトを外す）
-	m_pPlayer->Final(); // プレイヤーの終了処理
-	m_pCamera->End(); // カメラの終了処理
-	m_pMap->End(); // マップの終了処理
-	 m_pEnemy->End(); // 敵の終了処理（必要ならコメントアウトを外す）
-	
+	 m_pPlayer->Final(); // プレイヤーの終了処理
+	 m_pEnemy->End(); // 敵の終了処理
+
 }
 
 void SceneMain::Update()
 {
+	// マップの更新処理
+	m_pMap->Update(); // マップの更新
 	// プレイヤーの更新処理
 	m_pPlayer->Update(); // プレイヤーの更新
 	// playerの足元に地形があるか
@@ -69,7 +69,7 @@ void SceneMain::Update()
 	// プレイヤーの位置をカメラの注視点に設定
 	m_pCamera->SetTarget(m_pPlayer->GetPos()); // カメラの注視点をプレイヤーの位置に設定
 	// カメラの位置をプレイヤーの位置に設定
-	m_pCamera->SetHAngle(m_pPlayer->GetPos().x);
+	m_pCamera->SetHAngle(m_pPlayer->GetPos().x); // カメラの水平角度をプレイヤーのX座標に設定
 	m_pCamera->SetVAngle(m_pPlayer->GetPos().y);
 	// カメラの更新処理
 	m_pCamera->Update(); // カメラの更新
@@ -78,8 +78,7 @@ void SceneMain::Update()
 	m_pEnemy->SetPlayer(m_pPlayer->GetPos()); // 敵にプレイヤーの位置を設定
 	// 敵の更新処理
 	 m_pEnemy->Update(); // 敵の更新
-	// マップの更新処理
-	m_pMap->Update(); // マップの更新
+
 
 	// プレイヤーと敵との当たり判定
 
@@ -88,10 +87,11 @@ void SceneMain::Update()
 
 void SceneMain::Draw()
 {
+	m_pMap->Draw(); // マップの描画
 	// プレイヤーの描画処理
 	m_pPlayer->Draw();
 	// 敵の描画処理
 	 m_pEnemy->Draw(); // 敵の描画
 	// マップの描画処理
-	m_pMap->Draw(); // マップの描画
+
 }

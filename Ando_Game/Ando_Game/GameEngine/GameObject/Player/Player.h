@@ -1,6 +1,5 @@
 #pragma once
 #include "../Base/GameObject.h"
-#include "../../Vector3/Vector3.h"
 class Player : public GameObject
 {
 private:
@@ -36,6 +35,7 @@ public:
 	
 	void Init();
 	void SetModel(int model) { m_modelHandle = model; }
+	void Final();
 	void Update();
 	// ‹r‚ª’n–Ê‚ÉÚG‚µ‚Ä‚¢‚é‚©
 	bool IsGrounded() const { return m_isSky == false; }
@@ -44,6 +44,6 @@ public:
 	float GetColRadius() const;
 	float GetColRadiusSign() const;
 	void Draw();
-	void Final();
+	
 };
 

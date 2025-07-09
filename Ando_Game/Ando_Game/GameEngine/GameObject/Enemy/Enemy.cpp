@@ -41,7 +41,7 @@ void Enemy::Update()
 	}
 	else
 	{
-		m_transform->SetPosition({ 0.f, 0.f, 0.f }); // モデルがない場合は初期位置に戻す
+		m_transform->SetPosition({ 15.0f, 0.0f, 12.0f }); // モデルがない場合は初期位置に戻す
 		m_transform->SetRotation({ 0.f, 0.f, 0.f }); // モデルがない場合は初期回転に戻す
 	}
 
@@ -62,7 +62,7 @@ void Enemy::Draw()
 	}
 	else
 	{
-		DrawSphere3D(m_transform->GetPosition(), 50.0f,7.0f,GetColor(255,0,0), GetColor(255, 0, 0), TRUE); // モデルがない場合は球体を描画
+		DrawSphere3D(m_transform->GetPosition(), 50.0f,7.0f,GetColor(0,255,0), GetColor(0, 255, 0), TRUE); // モデルがない場合は球体を描画
 	}
 }
 

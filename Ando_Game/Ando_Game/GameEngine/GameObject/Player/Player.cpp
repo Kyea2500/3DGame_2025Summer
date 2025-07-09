@@ -45,8 +45,14 @@ m_isSky(false)
 
 void Player::Init()
 {
-	m_transform->SetPosition({ 0.f, 0.f, 0.f });
-	m_velocity->SetVelocity({ 0.f, 0.f, 0.f });
+	// プレイヤーの初期位置を設定
+	m_transform->SetPosition(VGet(0.0f, 0.0f, 0.0f));
+	// プレイヤーの初期回転を設定
+	m_transform->SetRotation(VGet(0.0f, 0.0f, 0.0f));
+	// プレイヤーの初期スケールを設定
+	m_transform->Setscale(VGet(1.0f, 1.0f, 1.0f));
+	
+	m_velocity->GetVelocity() = VGet(0.0f, 0.0f, 0.0f); // 初期速度を設定
 }
 
 void Player::Update()
@@ -56,7 +62,7 @@ void Player::Update()
 		// m_vec.z *= kMoveDecRate;
 	m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
 
-	/*MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));*/
+
 	// 当たり判定の描画
 	DrawSphere3D(
 		GetColPos(),
@@ -64,7 +70,7 @@ void Player::Update()
 		kPlayerColor,
 		0xffffff,
 		0xffffff,
-		false);
+		true);
 	// 立札を読むための当たり判定
 	DrawSphere3D(
 		GetColPos(),
@@ -103,7 +109,7 @@ void Player::Update()
 VECTOR Player::GetColPos() const
 {
 	VECTOR result = m_transform->GetPosition();
-	result.y += 160.0f;
+	result.y += 80.0f;
 	return result;
 }
 
@@ -121,19 +127,14 @@ void Player::Draw()
 {
 	// プレイヤーのモデルを描画する
 	MV1DrawModel(m_modelHandle);
-	//MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
+	MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
 }
 
 void Player::Final()
 {
-	// プレイヤーのモデルを削除する
-	if (m_modelHandle != -1)
-	{
-		MV1DeleteModel(m_modelHandle);
-		m_modelHandle = -1; // モデルハンドルを無効化
-	}
-	m_transform.reset(); // Transformオブジェクトをリセット
-	m_velocity.reset(); // Velocityオブジェクトをリセット
+	
+	MV1DeleteModel(m_modelHandle);
+
 }
 
 void Player::UpdateJump()
