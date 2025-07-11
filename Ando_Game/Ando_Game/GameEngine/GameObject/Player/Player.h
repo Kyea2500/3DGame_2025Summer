@@ -1,5 +1,6 @@
 #pragma once
 #include "../Base/GameObject.h"
+class Enemy; // 前方宣言
 class Player : public GameObject
 {
 private:
@@ -10,6 +11,8 @@ private:
 private:
 	std::shared_ptr<Transform> m_transform;
 	std::shared_ptr<Velocity> m_velocity;
+
+	std::shared_ptr<Enemy> m_Enemy; // 敵のポインタ
 
 	// プレイヤーの移動速度
 	float speed;
@@ -44,6 +47,9 @@ public:
 	float GetColRadius() const;
 	float GetColRadiusSign() const;
 	void Draw();
+	void OnDamage(std::shared_ptr<Enemy> enemy); // ダメージを受けたときの処理
+
+
 	
 };
 

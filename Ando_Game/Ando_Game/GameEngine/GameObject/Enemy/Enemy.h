@@ -5,7 +5,7 @@ class Player; // 前方宣言
 class Enemy : public GameObject
 {
 private:
-	int m_modelHandle; // 敵のモデルハンドル
+	int EnemyHandle; // 敵のモデルハンドル
 	std::shared_ptr<Transform> m_transform; // 敵の変形情報を保持するTransformオブジェクト
 	std::shared_ptr<Velocity> m_velocity; // 敵の速度を保持するVelocityオブジェクト
 	// プレイヤーのポインタ
@@ -17,7 +17,7 @@ public:
 	~Enemy();
 	void Init();
 	void End();
-	void SetModel(int modelHandle) { m_modelHandle = modelHandle; }
+	void SetModel(int Handle) { EnemyHandle = Handle; }
 	void Update();
 	void Draw();
 	VECTOR GetColPos() const; // 当たり判定の位置を取得

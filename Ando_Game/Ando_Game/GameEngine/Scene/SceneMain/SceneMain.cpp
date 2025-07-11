@@ -25,7 +25,8 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("data/model/Player.mv1"); // プレイヤーのモデルを読み込み
+	m_playerHandle =MV1LoadModel("../../Ando_Game/data/Model/player.mv1"); // プレイヤーのモデルを読み込み
+
 
 	// プレイヤーの初期化
 	m_pPlayer = std::make_shared<Player>();
@@ -74,13 +75,10 @@ void SceneMain::Update()
 	// カメラの更新処理
 	m_pCamera->Update(); // カメラの更新
 	
-	// 敵のプレイヤーの位置を取得
-	m_pEnemy->SetPlayer(m_pPlayer->GetPos()); // 敵にプレイヤーの位置を設定
+	// 敵のプレイヤーの位置情報を取得
+	m_pEnemy->SetPlayer(m_pPlayer->GetPos());
 	// 敵の更新処理
 	 m_pEnemy->Update(); // 敵の更新
-
-
-	// プレイヤーと敵との当たり判定
 
 
 }

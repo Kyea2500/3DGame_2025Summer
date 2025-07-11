@@ -1,2 +1,7 @@
-﻿  Player.cpp
+﻿  Enemy.cpp
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\GameObject\Enemy\Enemy.cpp(64,50): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Player.cpp
+  Camera.cpp
+  SceneMain.cpp
+  コードを生成中...
   Ando_Game.vcxproj -> C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\x64\Debug\Ando_Game.exe

@@ -4,7 +4,9 @@
 namespace
 {
 	// プレイヤーの移動速度
-	constexpr float kPlayerSpeed = 40.0f;
+	constexpr float kPlayerNormalSpeed = 40.0f;
+	// ダッシュ時の移動速度
+	constexpr float kPlayerDashSpeed = 80.0f;
 
 	// プレイヤーの当たり判定半径
 	constexpr float kColRadius = 85.0f;
@@ -23,14 +25,14 @@ namespace
 	// プレイヤーのジャンプ力
 	constexpr float kJumpPower = 22.0f;
 
-	// プレイヤーの移動加速度
-	constexpr float kMoveAccel = 6.00f;
+	//// プレイヤーの移動加速度
+	//constexpr float kMoveAccel = 6.00f;
 	// 移動減速率
 	constexpr float kMoveDecRate = 0.80f;
 
 }
 
-Player::Player() :speed(kPlayerSpeed),
+Player::Player() :speed(0.0f),
 m_transform(std::make_shared<Transform>()),
 m_velocity(std::make_shared<Velocity>()),
 m_modelHandle(-1),
@@ -70,7 +72,7 @@ void Player::Update()
 		kPlayerColor,
 		0xffffff,
 		0xffffff,
-		true);
+		false);
 	// 立札を読むための当たり判定
 	DrawSphere3D(
 		GetColPos(),
@@ -127,19 +129,27 @@ void Player::Draw()
 {
 	// プレイヤーのモデルを描画する
 	MV1DrawModel(m_modelHandle);
-	MV1SetRotationXYZ(m_modelHandle, VGet(0.0f, DX_PI_F, 0.0f));
+}
+
+void Player::OnDamage(std::shared_ptr<Enemy> enemy)
+{
+	// 敵とぶつかった時、ミスになる
+	// つまり、プレイヤーが一回死ぬ
+	// ここでは、プレイヤーの位置を初期位置に戻す
+	m_transform->SetPosition(VGet(0.0f, 0.0f, 0.0f)); // プレイヤーの位置を初期位置に戻す
+	// 本音を言うなら残り残機の表示、ロードまでしたい
+	// しかし、時間的にも今回はプレイヤーの位置を初期位置に戻すだけにする
+
 }
 
 void Player::Final()
 {
-	
-	MV1DeleteModel(m_modelHandle);
 
 }
 
 void Player::UpdateJump()
 {
-	if (PadInput::IsTrigger(PAD_INPUT_1)) // ジャンプボタンが押されたら
+	if (PadInput::IsTrigger(PAD_INPUT_2)) // ジャンプボタンが押されたら
 	{
 		if (m_isJump < kMaxJumpCount) // 1段目または2段目のジャンプ中でない場合
 		{
@@ -170,8 +180,23 @@ void Player::UpdateMove()
 	{
 		//m_vec.x = 0.0f; // 水平方向の移動ベクトルをリセット
 		m_velocity->SetVelocityX(0.0f); // X軸の速度をリセット
+		
 		//m_vec.z = 0.0f; // 垂直方向の移動ベクトルをリセット
 		m_velocity->SetVelocityZ(0.0f); // Z軸の速度をリセット
+	}
+	
+	// 移動速度を設定
+	// 2ボタン(Bボタン)を押している間はダッシュする
+	if (PadInput::IsPress(PAD_INPUT_1))
+	{
+		// ダッシュ中の移動速度
+		speed = kPlayerDashSpeed;
+	}
+	// 2ボタン(Bボタン)を押していない場合は通常の移動速度
+	else
+	{
+		// 通常の移動速度
+		speed = kPlayerNormalSpeed;
 	}
 
 	// 上下左右の入力に応じて移動ベクトルを更新
@@ -208,19 +233,8 @@ void Player::UpdateMove()
 	// 移動ベクトルがゼロでない場合に正規化を行う
 	if (m_velocity->GetVelocityX() != 0.0f || m_velocity->GetVelocityZ() != 0.0f)
 	{
-		/*float length = sqrtf(m_vec.x * m_vec.x + m_vec.z * m_vec.z);*/
-		float length = sqrtf(m_velocity->GetVelocityX() * m_velocity->GetVelocityX() +
-			m_velocity->GetVelocityZ() * m_velocity->GetVelocityZ());
-
-		if (length > 0.0f)
-		{
-			/*m_vec.x /= length;*/
-			m_velocity->SetVelocityX(m_velocity->GetVelocityX() / length);
-			/*m_vec.z /= length;*/
-			m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() / length);
-		}
+		m_velocity->VectorNormalizeXZ(); // XZ平面での正規化
 	}
-
 
 	// 位置を更新
 	/*m_pos = VecAdd(m_pos, m_vec);*/
