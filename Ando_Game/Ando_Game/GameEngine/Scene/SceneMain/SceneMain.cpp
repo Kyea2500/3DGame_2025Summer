@@ -25,8 +25,16 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle =MV1LoadModel("../../Ando_Game/data/Model/player.mv1"); // プレイヤーのモデルを読み込み
-
+	m_playerHandle = MV1LoadModel("data/Model/playre.mv1"); // プレイヤーのモデルを読み込み
+	// ↑何故か読み込めずに描画がされない。
+	// 恐らくモデルのパスを間違えているが、どこが間違っているのか理解できない。
+	//　それはなぜか→全く同じ条件にして描画できるか確認した時、何故か描画されなかったから。
+	// 考えられる原因は2つ、1つはモデルのパスのタイプミス、もう一つはプレイヤー側の処理ミス
+	// 描画の条件を全く一緒+モデルの名前をコピペしても描画されなかったので、個人的にはプレイヤーの処理ミスだとは思われるが…
+	m_mapHandle = MV1LoadModel("../../Ando_Game/data/Model/map.mv1"); // マップのモデルを読み込み
+	// ↑としたときにMapの描画もされていないので、プレイヤー側の描画ミスではない可能性もある。
+	// なので、一概にはプレイヤー側の処理ミスとは言い切れない。
+	// どうしたものか…
 
 	// プレイヤーの初期化
 	m_pPlayer = std::make_shared<Player>();
@@ -38,15 +46,14 @@ void SceneMain::Init()
 	 m_pEnemy->Init(); // 敵の初期化
 	//Transform transform; // Transformオブジェクトを作成
 
-	// カメラの初期化
-	m_pCamera=std::make_shared<Camera>();
-	m_pCamera->Init(); // カメラの初期化
-
 	// マップの初期化
 	m_pMap = std::make_shared<Map>();
 	m_pMap->SetModel(m_mapHandle); // マップのモデルハンドルを設定
 	m_pMap->Init(); // マップの初期化
 
+	// カメラの初期化
+	m_pCamera = std::make_shared<Camera>();
+	m_pCamera->Init(); // カメラの初期化
 }
 
 void SceneMain::End()
@@ -69,17 +76,16 @@ void SceneMain::Update()
 	
 	// プレイヤーの位置をカメラの注視点に設定
 	m_pCamera->SetTarget(m_pPlayer->GetPos()); // カメラの注視点をプレイヤーの位置に設定
-	// カメラの位置をプレイヤーの位置に設定
+	//// カメラの位置をプレイヤーの位置に設定
 	m_pCamera->SetHAngle(m_pPlayer->GetPos().x); // カメラの水平角度をプレイヤーのX座標に設定
-	m_pCamera->SetVAngle(m_pPlayer->GetPos().y);
+	m_pCamera->SetVAngle(m_pPlayer->GetPos().y); // カメラの垂直角度をプレイヤーのY座標に設定
 	// カメラの更新処理
 	m_pCamera->Update(); // カメラの更新
 	
 	// 敵のプレイヤーの位置情報を取得
 	m_pEnemy->SetPlayer(m_pPlayer->GetPos());
 	// 敵の更新処理
-	 m_pEnemy->Update(); // 敵の更新
-
+	 m_pEnemy->Update(); // 敵の更新処理
 
 }
 

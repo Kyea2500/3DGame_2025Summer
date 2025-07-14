@@ -1,7 +1,20 @@
-﻿  Enemy.cpp
-C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\GameObject\Enemy\Enemy.cpp(64,50): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  Player.cpp
-  Camera.cpp
-  SceneMain.cpp
-  コードを生成中...
+﻿  Camera.cpp
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\InputDevice\Pad\Pad.h(48,39): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'GameEngine/InputDevice/Camera/Camera.cpp' をコンパイルしています)
+  
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\InputDevice\Pad\Pad.h(49,39): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'GameEngine/InputDevice/Camera/Camera.cpp' をコンパイルしています)
+  
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\InputDevice\Pad\Pad.h(50,39): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'GameEngine/InputDevice/Camera/Camera.cpp' をコンパイルしています)
+  
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\InputDevice\Pad\Pad.h(57,38): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'GameEngine/InputDevice/Camera/Camera.cpp' をコンパイルしています)
+  
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\InputDevice\Pad\Pad.h(58,38): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'GameEngine/InputDevice/Camera/Camera.cpp' をコンパイルしています)
+  
+C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\InputDevice\Pad\Pad.h(59,38): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'GameEngine/InputDevice/Camera/Camera.cpp' をコンパイルしています)
+  
   Ando_Game.vcxproj -> C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\x64\Debug\Ando_Game.exe

@@ -42,6 +42,9 @@ void Map::Update()
 	MV1SetRotationXYZ(m_mapHandle, m_transform->GetRotation());
 	// マップのスケールを更新
 	MV1SetScale(m_mapHandle, m_transform->GetScale());
+
+
+	// マップのモデルを更新
 }
 
 void Map::Draw()

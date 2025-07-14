@@ -68,11 +68,8 @@ void Camera::Update()
 	// カメラとプレイヤーの位置は一定の距離を保つ
 	// 奥に行けばカメラも追従して奥に行き、
 	// 手前に動けばカメラも引いて追従する
-	VECTOR playerPos = m_pPlayer->GetPos(); // プレイヤーの位置を取得
-	m_transform->SetPosition(VGet(playerPos.x + k_CameraPosX, playerPos.y + k_CameraPosY, playerPos.z + k_CameraPosZ)); // カメラの位置をプレイヤーの位置に設定
-
-	
-
+	//VECTOR playerPos = m_pPlayer->GetPos(); // プレイヤーの位置を取得
+	//m_transform->SetPosition(VGet(playerPos.x + k_CameraPosX, playerPos.y + k_CameraPosY, playerPos.z + k_CameraPosZ)); // カメラの位置をプレイヤーの位置に設定
 
 	// カメラの角度を更新
 	m_sinParam = std::sin(m_horizontalAngle / k_Horizontal);
@@ -86,11 +83,47 @@ void Camera::Update()
 	{
 		m_verticalAngle = -k_Vertical; // 垂直角度が下限を超えた場合は下限に設定
 	}
+	// 水平角度の制限
+	if (m_horizontalAngle > k_Horizontal)
+	{
+		m_horizontalAngle = k_Horizontal; // 水平角度が上限を超えた場合は上限に設定
+	}
+	else if (m_horizontalAngle < -k_Horizontal)
+	{
+		m_horizontalAngle = -k_Horizontal; // 水平角度が下限を超えた場合は下限に設定
+	}
+
 	// カメラの位置を計算
 	VECTOR cameraPos;
 	cameraPos.x = m_transform->GetPosition().x + m_cosParam * std::cos(m_verticalAngle) * 1000.0f; // カメラのX位置
 	cameraPos.y = m_transform->GetPosition().y + m_sinParam * std::cos(m_verticalAngle) * 1000.0f; // カメラのY位置
 	cameraPos.z = m_transform->GetPosition().z + std::sin(m_verticalAngle) * 1000.0f; // カメラのZ位置
+
+	// プレイヤーの入力に応じてカメラの角度を更新
+	// カメラの向きは移動とは違うもう片方のスティックで操作する
+
+	Pad RightStick; // 右スティックの入力を取得
+	RightStick.Update(); // 右スティックの入力を更新
+	// 右スティックの入力に応じてカメラを回転
+	if (RightStick.IsPress(PAD_INPUT_UP)) 
+	{
+		cameraPos.x += RightStick.GetRightStick().X() * 0.01f; // カメラの位置を更新
+	}
+
+	if (RightStick.IsPress(PAD_INPUT_RIGHT))
+	{
+		cameraPos.x -= RightStick.GetRightStick().X() * 0.01f; // カメラの位置を更新
+	}
+
+	if (RightStick.IsPress(PAD_INPUT_UP))
+	{
+		cameraPos.y += RightStick.GetRightStick().Y() * 0.01f; // カメラの位置を更新
+	}
+
+	if (RightStick.IsPress(PAD_INPUT_DOWN))
+	{
+		cameraPos.y -= RightStick.GetRightStick().Y() * 0.01f; // カメラの位置を更新
+	}
 
 
 	// カメラの位置を更新
