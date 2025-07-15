@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,6 +13,16 @@
     {
       "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -35,12 +41,16 @@
       "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\Parts\\Velocity\\Velocity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Map\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\GameObject\\Map\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\GameObject\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Parts\\Transform\\transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\Parts\\Transform\\transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Map\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\GameObject\\Map\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Base\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -79,10 +89,6 @@
       "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Parts\\Transform\\transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\Parts\\Transform\\transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5D5E08AE-E636-45EF-97C9-36EC969DF8F2}|Ando_Game\\Ando_Game.vcxproj|solutionrelative:Ando_Game\\GameEngine\\InputDevice\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -102,17 +108,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 219,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Pad.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.h",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.h",
               "RelativeToolTip": "Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.h",
-              "ViewState": "AgIAACYAAAAAAAAAAADwv0IAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAADwv08AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-07-14T01:19:10.302Z",
               "IsPinned": true,
@@ -120,13 +126,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Pad.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.cpp",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.cpp",
               "RelativeToolTip": "Ando_Game\\GameEngine\\InputDevice\\Pad\\Pad.cpp",
-              "ViewState": "AgIAADMAAAAAAAAAAAAIwFEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwCAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-11T01:13:15.496Z",
               "IsPinned": true,
@@ -134,13 +140,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp",
               "RelativeToolTip": "Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAASwHgAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAYwG0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-23T01:15:35.085Z",
               "IsPinned": true,
@@ -148,13 +154,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Camera.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.h",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.h",
               "RelativeToolTip": "Ando_Game\\GameEngine\\InputDevice\\Camera\\Camera.h",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAwCUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-23T01:04:05.884Z",
               "IsPinned": true,
@@ -162,7 +168,48 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "JoyPad.cpp",
+              "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.cpp",
+              "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.cpp",
+              "RelativeToolTip": "..\\..\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-15T06:05:37.425Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JoyPad.h",
+              "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.h",
+              "RelativeDocumentMoniker": "..\\..\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.h",
+              "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.h",
+              "RelativeToolTip": "..\\..\\Ando_3DGame\\\u53C2\u8003\u30B3\u30FC\u30C9\\InputDevice\\JoyPad\\JoyPad.h",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF4AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-15T06:05:05.863Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
+              "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
+              "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
+              "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAAwPcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-10T04:45:38.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Velocity.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Parts\\Velocity\\Velocity.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Parts\\Velocity\\Velocity.cpp",
@@ -175,33 +222,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
-              "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
-              "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
-              "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.cpp",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAAwPcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-10T04:45:38.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.h",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Player\\Player.h",
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-10T04:52:30.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T04:52:30.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Map\\Map.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Map\\Map.h",
@@ -209,12 +242,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Map\\Map.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-04T05:00:59.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T05:00:59.788Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Map\\Map.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Map\\Map.cpp",
@@ -222,12 +254,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Map\\Map.cpp",
               "ViewState": "AgIAAB0AAAAAAAAAAADwvzwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-04T04:54:49.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T04:54:49.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "SceneMain.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.h",
@@ -240,20 +271,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "SceneMain.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.cpp",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.cpp",
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.cpp",
-              "ViewState": "AgIAADUAAAAAAAAAAAAcwEwAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAcwEcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-16T00:43:25.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\InputDevice\\Game.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\InputDevice\\Game.h",
@@ -265,20 +296,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 11,
               "Title": "transform.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Parts\\Transform\\transform.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Parts\\Transform\\transform.h",
               "ToolTip": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Parts\\Transform\\transform.h",
               "RelativeToolTip": "Ando_Game\\GameEngine\\Parts\\Transform\\transform.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-20T01:51:00.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T01:51:00.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Velocity.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Parts\\Velocity\\Velocity.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Parts\\Velocity\\Velocity.h",
@@ -286,12 +316,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Parts\\Velocity\\Velocity.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-20T03:18:09.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T03:18:09.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Enemy.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.cpp",
@@ -303,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "GameObject.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Base\\GameObject.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Base\\GameObject.h",
@@ -311,12 +340,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Base\\GameObject.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-20T01:50:39.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T01:50:39.107Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\main.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\main.cpp",
@@ -328,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.h",
@@ -336,12 +364,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-07T01:46:01.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-07T01:46:01.788Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "SceneTitle.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\SceneTitle\\SceneTitle.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Scene\\SceneTitle\\SceneTitle.cpp",
@@ -353,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "SceneManager.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.h",
@@ -361,12 +388,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-10T05:43:42.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T05:43:42.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "SceneManager.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.cpp",
@@ -374,12 +400,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAApwBYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-01T07:31:35.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-01T07:31:35.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Vector3.cpp",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Vector3\\Vector3.cpp",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Vector3\\Vector3.cpp",
@@ -387,12 +412,11 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Vector3\\Vector3.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-25T05:12:22.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-25T05:12:22.312Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Vector3.h",
               "DocumentMoniker": "C:\\Users\\\u5B89\u85E4 \u6B69\u5922\\Documents\\GitHub\\3DGame_2025Summer\\Ando_Game\\Ando_Game\\GameEngine\\Vector3\\Vector3.h",
               "RelativeDocumentMoniker": "Ando_Game\\GameEngine\\Vector3\\Vector3.h",
@@ -400,8 +424,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Vector3\\Vector3.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-25T05:12:13.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-25T05:12:13.141Z"
             }
           ]
         }

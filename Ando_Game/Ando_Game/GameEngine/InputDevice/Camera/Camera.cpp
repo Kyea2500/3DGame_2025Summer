@@ -105,26 +105,24 @@ void Camera::Update()
 	Pad RightStick; // 右スティックの入力を取得
 	RightStick.Update(); // 右スティックの入力を更新
 	// 右スティックの入力に応じてカメラを回転
-	if (RightStick.IsPress(PAD_INPUT_UP)) 
+	if (RightStick.GetRightStick().RIGHT()) // 左スティックの右入力
 	{
-		cameraPos.x += RightStick.GetRightStick().X() * 0.01f; // カメラの位置を更新
+		cameraPos.x+=100; // カメラの位置を更新
 	}
 
-	if (RightStick.IsPress(PAD_INPUT_RIGHT))
+	if (RightStick.GetRightStick().X()==-1000)
 	{
-		cameraPos.x -= RightStick.GetRightStick().X() * 0.01f; // カメラの位置を更新
+		cameraPos.x--; // カメラの位置を更新
 	}
 
-	if (RightStick.IsPress(PAD_INPUT_UP))
+	if (RightStick.GetRightStick().Y()==1000)
 	{
-		cameraPos.y += RightStick.GetRightStick().Y() * 0.01f; // カメラの位置を更新
+		cameraPos.y++; // カメラの位置を更新
 	}
-
-	if (RightStick.IsPress(PAD_INPUT_DOWN))
+	if (RightStick.GetRightStick().Y()==-1000)
 	{
-		cameraPos.y -= RightStick.GetRightStick().Y() * 0.01f; // カメラの位置を更新
+		cameraPos.y--; // カメラの位置を更新
 	}
-
 
 	// カメラの位置を更新
 	SetCameraPositionAndTarget_UpVecY(m_transform->GetPosition(), m_target);

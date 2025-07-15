@@ -65,17 +65,17 @@ void Pad::Update()
 
 }
 
-bool Pad::IsPress(int button) const
-{
-	// ここでは、ボタンが押されているかどうかをチェックします。
-// 実際には、m_joyPadの状態を確認して、ボタンが押されているかどうかを返す必要があります。
-	return (m_joyPad.Buttons[button] & 0x80) != 0; // ボタンが押されている場合はtrue,そうでない場合はfalseを返す
-}
-
-
-bool Pad::IsTrigger(int button) const
-{
-	// ここでは、ボタンが押された瞬間かどうかをチェックします。
-	// 実際には、m_joyPadの状態と前回の状態を比較して、ボタンが押された瞬間かどうかを返す必要があります。
-	return (m_joyPad.Buttons[button] & 0x80) && !(m_prevJoyPad.Buttons[button] & 0x80);
-}
+//bool Pad::IsPress(int button) const
+//{
+//	// ここでは、ボタンが押されているかどうかをチェックします。
+//// 実際には、m_joyPadの状態を確認して、ボタンが押されているかどうかを返す必要があります。
+//	return (m_joyPad.Buttons[button] & 0x80) != 0; // ボタンが押されている場合はtrue,そうでない場合はfalseを返す
+//}
+//
+//
+//bool Pad::IsTrigger(int button) const
+//{
+//	// ここでは、ボタンが押された瞬間かどうかをチェックします。
+//	// 実際には、m_joyPadの状態と前回の状態を比較して、ボタンが押された瞬間かどうかを返す必要があります。
+//	return (m_joyPad.Buttons[button] & 0x80) && !(m_prevJoyPad.Buttons[button] & 0x80);
+//}

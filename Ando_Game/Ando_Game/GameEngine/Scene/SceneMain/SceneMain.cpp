@@ -19,16 +19,21 @@ SceneMain::SceneMain()
 }
 
 SceneMain::~SceneMain()
-{
+{// ここで必要なクリーンアップ処理を行う
+	// 例えば、ポインタの解放やモデルの削除など
+	if (m_pPlayer) m_pPlayer->Final(); // プレイヤーの終了処理
+	if (m_pEnemy) m_pEnemy->End(); // 敵の終了処理
+	if (m_pMap) m_pMap->End(); // マップの終了処理
+	if (m_pCamera) m_pCamera->End(); // カメラの終了処理
 }
 
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("data/Model/playre.mv1"); // プレイヤーのモデルを読み込み
+	m_playerHandle = MV1LoadModel("../Ando_Game/data/Model/playre.mv1"); // プレイヤーのモデルを読み込み
 	// ↑何故か読み込めずに描画がされない。
 	// 恐らくモデルのパスを間違えているが、どこが間違っているのか理解できない。
-	//　それはなぜか→全く同じ条件にして描画できるか確認した時、何故か描画されなかったから。
+	// それはなぜか→全く同じ条件にして描画できるか確認した時、何故か描画されなかったから。
 	// 考えられる原因は2つ、1つはモデルのパスのタイプミス、もう一つはプレイヤー側の処理ミス
 	// 描画の条件を全く一緒+モデルの名前をコピペしても描画されなかったので、個人的にはプレイヤーの処理ミスだとは思われるが…
 	m_mapHandle = MV1LoadModel("../../Ando_Game/data/Model/map.mv1"); // マップのモデルを読み込み
