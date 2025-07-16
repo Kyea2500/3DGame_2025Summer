@@ -30,7 +30,8 @@ namespace
 	// カメラの初期位置Z
 	constexpr float k_CameraPosZ = -1000.0f;
 
-	
+	// カメラの移動速度
+	constexpr float k_CameraMoveSpeed = 10.0f; // カメラの移動速度
 
 
 
@@ -110,19 +111,23 @@ void Camera::Update()
 		cameraPos.x+=100; // カメラの位置を更新
 	}
 
-	if (RightStick.GetRightStick().X()==-1000)
+	if (RightStick.GetRightStick().LEFT())
 	{
-		cameraPos.x--; // カメラの位置を更新
+		cameraPos.x-=100; // カメラの位置を更新
 	}
 
-	if (RightStick.GetRightStick().Y()==1000)
+	if (RightStick.GetRightStick().UP())
 	{
-		cameraPos.y++; // カメラの位置を更新
+		cameraPos.y+=100; // カメラの位置を更新
 	}
-	if (RightStick.GetRightStick().Y()==-1000)
+	if (RightStick.GetRightStick().DOWN())
 	{
-		cameraPos.y--; // カメラの位置を更新
+		cameraPos.y-=100; // カメラの位置を更新
 	}
+	// ↑何故か更新されない。カメラの注視点が悪さをしている可能性がある。
+	// もしくは処理自体が誤っている
+	//結果：処理ミスだと判明
+
 
 	// カメラの位置を更新
 	SetCameraPositionAndTarget_UpVecY(m_transform->GetPosition(), m_target);

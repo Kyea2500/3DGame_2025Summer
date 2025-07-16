@@ -30,6 +30,8 @@ void SceneTitle::Update()
 	{
 		// 次のシーンへ遷移する処理を追加することができる
 	}
+	// 気持ち的にはタイトルを動かしてもいいかもしれないが…
+
 }
 
 void SceneTitle::Draw()

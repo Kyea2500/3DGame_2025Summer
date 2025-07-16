@@ -30,7 +30,7 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("../Ando_Game/data/Model/playre.mv1"); // プレイヤーのモデルを読み込み
+	m_playerHandle = MV1LoadModel("Ando_Game/data/Model/playre.mv1"); // プレイヤーのモデルを読み込み
 	// ↑何故か読み込めずに描画がされない。
 	// 恐らくモデルのパスを間違えているが、どこが間違っているのか理解できない。
 	// それはなぜか→全く同じ条件にして描画できるか確認した時、何故か描画されなかったから。
@@ -80,7 +80,7 @@ void SceneMain::Update()
 	// playerの足元に地形があるか
 	
 	// プレイヤーの位置をカメラの注視点に設定
-	m_pCamera->SetTarget(m_pPlayer->GetPos()); // カメラの注視点をプレイヤーの位置に設定
+	//m_pCamera->SetTarget(m_pPlayer->GetPos()); // カメラの注視点をプレイヤーの位置に設定
 	//// カメラの位置をプレイヤーの位置に設定
 	m_pCamera->SetHAngle(m_pPlayer->GetPos().x); // カメラの水平角度をプレイヤーのX座標に設定
 	m_pCamera->SetVAngle(m_pPlayer->GetPos().y); // カメラの垂直角度をプレイヤーのY座標に設定

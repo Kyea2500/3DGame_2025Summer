@@ -24,16 +24,18 @@ public:
 	// ƒJƒƒ‰‚Ì•ÏŒ`î•ñ‚ğæ“¾
 	void SetTarget(const VECTOR& _target) { m_target = _target; }
 	VECTOR GetTarget() const { return m_target; }
-	
+
 	void SetSinParam(const float& _sinParam) { m_sinParam = _sinParam; }
 	float GetSinParam() const { return m_sinParam; }
-	
+
 	void SetCosParam(const float& _cosParam) { m_cosParam = _cosParam; }
 	float GetCosParam() const { return m_cosParam; }
-	
+
 	void SetHAngle(const float& _hAngle) { m_horizontalAngle = _hAngle; }
 	float GetHAngle() const { return m_horizontalAngle; }
-	
+
 	void SetVAngle(const float& _vAngle) { m_verticalAngle = _vAngle; }
 	float GetVAngle() const { return m_verticalAngle; }
+
+
 };
