@@ -152,7 +152,7 @@
     <ClCompile Include="GameEngine\GameObject\Enemy\Enemy.cpp" />
     <ClCompile Include="GameEngine\InputDevice\Camera\Camera.cpp" />
     <ClCompile Include="GameEngine\Parts\Velocity\Velocity.cpp" />
-    <ClCompile Include="GameEngine\Scene\SceneClera\SceneClear .cpp" />
+    <ClCompile Include="GameEngine\Scene\SceneClear\SceneClear .cpp" />
     <ClCompile Include="GameEngine\InputDevice\InputManager\InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameEngine\GameObject\Player\Player.cpp" />
@@ -174,7 +174,7 @@
     <ClInclude Include="GameEngine\Scene\Manager\SceneManager.h" />
     <ClInclude Include="GameEngine\Scene\SceneTitle\SceneTitle.h" />
     <ClInclude Include="GameEngine\Scene\SceneMain\SceneMain.h" />
-    <ClInclude Include="GameEngine\Scene\SceneClera\SceneClear .h" />
+    <ClInclude Include="GameEngine\Scene\SceneClear\SceneClear .h" />
     <ClInclude Include="GameEngine\Parts\Velocity\Velocity.h" />
     <ClInclude Include="GameEngine\Vector3\Vector3.h" />
     <ClInclude Include="GameEngine\InputDevice\InputManager\InputManager.h" />

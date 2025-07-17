@@ -1,6 +1,6 @@
 #include "DxLib.h"
 #include"GameEngine/InputDevice/Game.h"
-#include"GameEngine/Scene/SceneMain/SceneMain.h"
+#include"GameEngine/Scene/Manager/SceneManager.h"
 
 
 namespace
@@ -19,7 +19,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 
 
-	std::shared_ptr<SceneMain> Scene = std::make_shared<SceneMain>();	// シーンのインスタンスを作成
+	std::shared_ptr<SceneManager> Scene = std::make_shared<SceneManager>();	// シーンのインスタンスを作成
 	Scene->Init();
 
 

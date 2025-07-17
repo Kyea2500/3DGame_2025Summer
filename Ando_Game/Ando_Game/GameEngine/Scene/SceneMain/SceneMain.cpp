@@ -71,7 +71,7 @@ void SceneMain::End()
 
 }
 
-void SceneMain::Update()
+SceneManager::SceneKind SceneMain::Update()
 {
 	// マップの更新処理
 	m_pMap->Update(); // マップの更新
@@ -92,6 +92,7 @@ void SceneMain::Update()
 	// 敵の更新処理
 	 m_pEnemy->Update(); // 敵の更新処理
 
+	 return SceneManager::kSceneMain;
 }
 
 void SceneMain::Draw()

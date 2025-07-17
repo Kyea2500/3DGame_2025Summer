@@ -2,7 +2,7 @@
 #include <memory>
 class SceneTitle;
 class SceneMain;
-class SceneGameClera;
+class SceneClear;
 class SceneManager
 {
 public:
@@ -17,18 +17,18 @@ public:
 	{
 		kSceneTitle,
 		kSceneMain,
-		kSceneGameClear,
+		kSceneClear,
 		kSceneNum
 	};private:
-		//SceneKind m_Kind;
-		//// 各シーンのポインタ
-		//SceneTitle* m_pSceneTitle;
-		//SceneMain* m_pSceneMain;
-		//SceneGameClera* m_pSceneClera;
-		std::shared_ptr<SceneTitle> m_pSceneTitle;
-		std::shared_ptr<SceneMain> m_pSceneMain;
-		std::shared_ptr<SceneGameClera> m_pSceneClera;
-		SceneKind m_Kind; // 現在のシーンの種類
+		SceneKind m_Kind;
+		// 各シーンのポインタ
+		SceneTitle* m_pSceneTitle;
+		SceneMain* m_pSceneMain;
+		SceneClear* m_pSceneClear;
+		//std::shared_ptr<SceneTitle> m_pSceneTitle;
+		//std::shared_ptr<SceneMain> m_pSceneMain;
+		//std::shared_ptr<SceneClear> m_pSceneClear;
+		//SceneKind m_Kind; // 現在のシーンの種類
 
 };
 

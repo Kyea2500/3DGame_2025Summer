@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include"../Manager/SceneManager.h"
 class Player;
 class Enemy;
 class Camera;
@@ -11,7 +12,8 @@ public:
 	~SceneMain();
 	void Init();
 	void End();
-	void Update();
+	/*void Update();*/
+	SceneManager::SceneKind Update();
 	void Draw();
 
 private:
