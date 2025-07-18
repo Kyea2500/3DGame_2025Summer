@@ -162,6 +162,7 @@
     <ClCompile Include="GameEngine\Scene\SceneMain\SceneMain.cpp" />
     <ClCompile Include="GameEngine\Vector3\Vector3.cpp" />
     <ClCompile Include="GameEngine\GameObject\Map\Map.cpp" />
+    <ClCompile Include="SceneMiss.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngine\GameObject\Enemy\Enemy.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="GameEngine\Vector3\Vector3.h" />
     <ClInclude Include="GameEngine\InputDevice\InputManager\InputManager.h" />
     <ClInclude Include="GameEngine\GameObject\Map\Map.h" />
+    <ClInclude Include="SceneMiss.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

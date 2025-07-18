@@ -59,6 +59,8 @@ void Player::Init()
 
 void Player::Update()
 {
+	// パッドの入力を更新
+	PadInput::Update();
 	// m_vec.x *= kMoveDecRate;
 	m_velocity->SetVelocityX(m_velocity->GetVelocityX() * kMoveDecRate);// X軸の速度を減速
 		// m_vec.z *= kMoveDecRate;
@@ -95,8 +97,7 @@ void Player::Update()
 		m_transform->SetPositionY(0.0f); // 地面に戻す
 	}
 
-	// パッドの入力を更新
-	PadInput::Update(); 
+	
 
 	// ジャンプの更新
 	UpdateJump();

@@ -21,12 +21,12 @@ SceneManager::~SceneManager()
 		m_pSceneTitle = nullptr; // タイトルシーンのポインタを解放
 		delete m_pSceneTitle; // タイトルシーンのメモリを解放
 	}
-	if (m_pSceneMain != nullptr)
+	else if (m_pSceneMain != nullptr)
 	{
 		m_pSceneMain = nullptr; // メインシーンのポインタを解放
 		delete m_pSceneMain; // メインシーンのメモリを解放
 	}
-	if (m_pSceneClear != nullptr)
+	else if (m_pSceneClear != nullptr)
 	{
 		m_pSceneClear = nullptr; // ゲームクリアシーンのポインタを解放
 		delete m_pSceneClear; // ゲームクリアシーンのメモリを解放
@@ -52,6 +52,7 @@ void SceneManager::Init()
 		m_pSceneClear = new SceneClear;
 		m_pSceneClear->Init();
 		break;
+	case SceneManager::kSceneNum:
 	default:
 		break;
 	}
@@ -63,25 +64,25 @@ void SceneManager::End()
 	switch (m_Kind)
 	{
 	case  SceneManager::kSceneTitle:
-		if (m_pSceneTitle != nullptr)
-		{
-			m_pSceneTitle->End();
-			m_pSceneTitle = nullptr; // タイトルシーンのポインタを解放
-		}
+		m_pSceneTitle->End();
+		delete m_pSceneTitle;
+		m_pSceneTitle = nullptr; // タイトルシーンのポインタを解放
+
 		break;
 	case  SceneManager::kSceneMain:
-		if (m_pSceneMain != nullptr)
-		{
-			m_pSceneMain->End();
-			m_pSceneMain = nullptr; // メインシーンのポインタを解放
-		}
+		m_pSceneMain->End();
+		delete m_pSceneMain;
+		m_pSceneMain = nullptr; // メインシーンのポインタを解放
+
 		break;
 	case  SceneManager::kSceneClear:
-		if (m_pSceneClear != nullptr)
-		{
-			m_pSceneClear->End();
-			m_pSceneClear = nullptr; // ゲームクリアシーンのポインタを解放
-		}
+
+		m_pSceneClear->End();
+		delete m_pSceneClear;
+		m_pSceneClear = nullptr; // ゲームクリアシーンのポインタを解放
+		break;
+	case SceneManager::kSceneNum:
+	default:
 		break;
 	}
 }
@@ -104,8 +105,19 @@ void SceneManager::Update()
 	//	nextKind = m_pSceneClear->Update();
 	//	break;
 
+	case SceneManager::kSceneNum:
 	default:
 		break;
+	}
+
+	if (nextKind != m_Kind)
+	{
+		// 現在実行中のシーン(m_kind)の終了処理
+		End();
+		// 次のシーンに切り替え
+		m_Kind = nextKind;
+		// 切り替え後のシーンの初期化
+		Init();
 	}
 }
 
@@ -125,6 +137,7 @@ void SceneManager::Draw()
 		m_pSceneClear->Draw();
 
 		break;
+	case SceneManager::kSceneNum:
 	default:
 		break;
 	}

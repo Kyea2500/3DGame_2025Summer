@@ -5,6 +5,7 @@
 #include"../../Parts/Transform/transform.h"
 #include"../../GameObject/Map/Map.h"
 #include "../../GameObject/Enemy/Enemy.h"
+#include"../../InputDevice/Pad/Pad.h"
 
 
 SceneMain::SceneMain()
@@ -65,9 +66,9 @@ void SceneMain::End()
 {
 	MV1DeleteModel(m_playerHandle); // プレイヤーのモデルを削除
 	MV1DeleteModel(m_mapHandle); // マップのモデルを削除
-	 MV1DeleteModel(m_enemyHandle); // 敵のモデルを削除（必要ならコメントアウトを外す）
-	 m_pPlayer->Final(); // プレイヤーの終了処理
-	 m_pEnemy->End(); // 敵の終了処理
+	MV1DeleteModel(m_enemyHandle); // 敵のモデルを削除（必要ならコメントアウトを外す）
+	m_pPlayer->Final(); // プレイヤーの終了処理
+	m_pEnemy->End(); // 敵の終了処理
 
 }
 
@@ -90,7 +91,7 @@ SceneManager::SceneKind SceneMain::Update()
 	// 敵のプレイヤーの位置情報を取得
 	m_pEnemy->SetPlayer(m_pPlayer->GetPos());
 	// 敵の更新処理
-	 m_pEnemy->Update(); // 敵の更新処理
+	m_pEnemy->Update(); // 敵の更新処理
 
 	 return SceneManager::kSceneMain;
 }
