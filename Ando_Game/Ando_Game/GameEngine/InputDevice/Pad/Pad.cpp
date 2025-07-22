@@ -59,7 +59,7 @@ void Pad::Update()
 		// 入力状態を取得
 		if (GetJoypadDirectInputState(DX_INPUT_PAD1, &m_joyPad))
 		{
-			assert(false && "Error: Failed to get joypad state.");
+			assert(false && "ゲームパッドが確認されませんでした");
 			return;
 		}
 

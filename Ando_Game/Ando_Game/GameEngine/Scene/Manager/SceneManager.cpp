@@ -90,6 +90,7 @@ void SceneManager::End()
 void SceneManager::Update()
 {
 	PadInput::Update();
+
 	SceneKind nextKind = m_Kind;
 	switch (m_Kind)
 	{

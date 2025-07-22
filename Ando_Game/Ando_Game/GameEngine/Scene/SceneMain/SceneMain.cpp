@@ -100,7 +100,7 @@ void SceneMain::Draw()
 {
 	m_pMap->Draw(); // マップの描画
 	// プレイヤーの描画処理
-	m_pPlayer->Draw();
+	m_pPlayer->Draw(); // プレイヤーの描画
 	// 敵の描画処理
 	 m_pEnemy->Draw(); // 敵の描画
 	// マップの描画処理
