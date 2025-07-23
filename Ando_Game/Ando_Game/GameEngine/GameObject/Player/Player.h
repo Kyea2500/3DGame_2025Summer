@@ -28,7 +28,6 @@ private:
 	bool m_isMove;			// trueなら移動中		falseなら移動していない
 
 	// プレイヤーのジャンプ状態
-	//bool m_isJump;		    // trueならジャンプ中		falseならジャンプしていない
 	int m_isJump;			// 0:未ジャンプ, 1:1段目ジャンプ, 2:2段目ジャンプ
 
 	// プレイヤーが空中にいるか
@@ -38,10 +37,11 @@ public:
 	
 	void Init();
 	void SetModel(int model) { m_modelHandle = model; }
-	void Final();
+	void End();
 	void Update();
 	// 脚が地面に接触しているか
 	bool IsGrounded() const { return m_isSky == false; }
+	void SetSky(bool isSky) { m_isSky = isSky; } // 空中状態を設定
 	VECTOR GetPos() const { return m_transform->GetPosition(); }
 	VECTOR GetColPos() const;
 	float GetColRadius() const;

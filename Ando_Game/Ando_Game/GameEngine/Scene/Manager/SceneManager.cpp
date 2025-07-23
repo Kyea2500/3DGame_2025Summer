@@ -89,6 +89,7 @@ void SceneManager::End()
 
 void SceneManager::Update()
 {
+	// パッドの入力状態を更新
 	PadInput::Update();
 
 	SceneKind nextKind = m_Kind;

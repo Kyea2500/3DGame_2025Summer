@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include"GameEngine/InputDevice/Game.h"
 #include"GameEngine/Scene/Manager/SceneManager.h"
+#include"GameEngine/InputDevice/Pad/Pad.h"
 
 
 namespace

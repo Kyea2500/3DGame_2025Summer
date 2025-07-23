@@ -44,25 +44,22 @@ void Enemy::Update()
 		m_transform->SetRotation({ 0.f, 0.f, 0.f }); // ƒ‚ƒfƒ‹‚ª‚È‚¢ê‡‚Í‰Šú‰ñ“]‚É–ß‚·
 	}
 
+	
+}
+
+void Enemy::Draw()
+{// “G‚Ìƒ‚ƒfƒ‹‚ğ•`‰æ
+	
+	MV1DrawModel(EnemyHandle);
+
 	DrawSphere3D(
 		GetColPos(),
 		GetColRadius(),
 		kEnemyColor,
 		0xff00ff,
 		0xff00ff,
-		true);
-}
-
-void Enemy::Draw()
-{// “G‚Ìƒ‚ƒfƒ‹‚ğ•`‰æ
-	if (EnemyHandle != -1)
-	{
-		MV1DrawModel(EnemyHandle);
-	}
-	else
-	{
-		DrawSphere3D(m_transform->GetPosition(), 50.0f,7.0f,GetColor(0,255,0), GetColor(0, 255, 0), TRUE); // ƒ‚ƒfƒ‹‚ª‚È‚¢ê‡‚Í‹…‘Ì‚ğ•`‰æ
-	}
+		false);
+	
 }
 
 VECTOR Enemy::GetColPos() const

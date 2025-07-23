@@ -44,10 +44,10 @@ Pad::~Pad()
 
 void Pad::Update()
 {
-	// 前のフレームに押されていたボタンの情報を覚えておく
-	lastInput = padInput;
-	// 個のフレームに押されているボタンの情報を取得する
-	padInput = GetJoypadDirectInputState(DX_INPUT_PAD1, &m_joyPad);
+	//// 前のフレームに押されていたボタンの情報を覚えておく
+	//lastInput = padInput;
+	//// 個のフレームに押されているボタンの情報を取得する
+	//padInput = GetJoypadDirectInputState(DX_INPUT_PAD1, &m_joyPad);
 
 	
 

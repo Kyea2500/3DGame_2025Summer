@@ -20,27 +20,17 @@ SceneMain::SceneMain()
 }
 
 SceneMain::~SceneMain()
-{// ここで必要なクリーンアップ処理を行う
-	// 例えば、ポインタの解放やモデルの削除など
-	if (m_pPlayer) m_pPlayer->Final(); // プレイヤーの終了処理
-	if (m_pEnemy) m_pEnemy->End(); // 敵の終了処理
-	if (m_pMap) m_pMap->End(); // マップの終了処理
-	if (m_pCamera) m_pCamera->End(); // カメラの終了処理
+{
 }
 
 void SceneMain::Init()
 {
 	// モデルを読み込む
-	m_playerHandle = MV1LoadModel("Ando_Game/data/Model/playre.mv1"); // プレイヤーのモデルを読み込み
-	// ↑何故か読み込めずに描画がされない。
-	// 恐らくモデルのパスを間違えているが、どこが間違っているのか理解できない。
-	// それはなぜか→全く同じ条件にして描画できるか確認した時、何故か描画されなかったから。
-	// 考えられる原因は2つ、1つはモデルのパスのタイプミス、もう一つはプレイヤー側の処理ミス
-	// 描画の条件を全く一緒+モデルの名前をコピペしても描画されなかったので、個人的にはプレイヤーの処理ミスだとは思われるが…
+	m_playerHandle = MV1LoadModel("../Ando_Game/data/Model/player.mv1"); // プレイヤーのモデルを読み込み
+	m_enemyHandle = MV1LoadModel("../Ando_Game/data/Model/enemy.mv1"); // 敵のモデルを読み込み
+	
 	m_mapHandle = MV1LoadModel("../../Ando_Game/data/Model/map.mv1"); // マップのモデルを読み込み
-	// ↑としたときにMapの描画もされていないので、プレイヤー側の描画ミスではない可能性もある。
-	// なので、一概にはプレイヤー側の処理ミスとは言い切れない。
-	// どうしたものか…
+	
 
 	// プレイヤーの初期化
 	m_pPlayer = std::make_shared<Player>();
@@ -67,7 +57,7 @@ void SceneMain::End()
 	MV1DeleteModel(m_playerHandle); // プレイヤーのモデルを削除
 	MV1DeleteModel(m_mapHandle); // マップのモデルを削除
 	MV1DeleteModel(m_enemyHandle); // 敵のモデルを削除（必要ならコメントアウトを外す）
-	m_pPlayer->Final(); // プレイヤーの終了処理
+	m_pPlayer->End(); // プレイヤーの終了処理
 	m_pEnemy->End(); // 敵の終了処理
 
 }
@@ -79,9 +69,16 @@ SceneManager::SceneKind SceneMain::Update()
 	// プレイヤーの更新処理
 	m_pPlayer->Update(); // プレイヤーの更新
 	// playerの足元に地形があるか
-	
+	if (m_pPlayer->IsGrounded()) // プレイヤーが地面に接触している場合
+	{
+		m_pPlayer->SetSky(false); // 空中にいない状態に設定
+	}
+	else // プレイヤーが空中にいる場合
+	{
+		m_pPlayer->SetSky(true); // 空中にいる状態に設定
+	}
 	// プレイヤーの位置をカメラの注視点に設定
-	//m_pCamera->SetTarget(m_pPlayer->GetPos()); // カメラの注視点をプレイヤーの位置に設定
+	m_pCamera->SetTarget(m_pPlayer->GetPos()); // カメラの注視点をプレイヤーの位置に設定
 	//// カメラの位置をプレイヤーの位置に設定
 	m_pCamera->SetHAngle(m_pPlayer->GetPos().x); // カメラの水平角度をプレイヤーのX座標に設定
 	m_pCamera->SetVAngle(m_pPlayer->GetPos().y); // カメラの垂直角度をプレイヤーのY座標に設定

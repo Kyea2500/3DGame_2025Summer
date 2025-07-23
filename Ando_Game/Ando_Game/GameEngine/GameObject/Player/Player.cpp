@@ -1,6 +1,7 @@
 #include "Player.h"
 #include"../../InputDevice/Pad/Pad.h"
 
+
 namespace
 {
 	// プレイヤーの移動速度
@@ -29,6 +30,7 @@ namespace
 	//constexpr float kMoveAccel = 6.00f;
 	// 移動減速率
 	constexpr float kMoveDecRate = 0.80f;
+	constexpr float kHitPower = 60.0f;
 
 }
 
@@ -49,12 +51,17 @@ void Player::Init()
 {
 	// プレイヤーの初期位置を設定
 	m_transform->SetPosition(VGet(0.0f, 0.0f, 0.0f));
-	// プレイヤーの初期回転を設定
-	m_transform->SetRotation(VGet(0.0f, 0.0f, 0.0f));
-	// プレイヤーの初期スケールを設定
-	m_transform->Setscale(VGet(1.0f, 1.0f, 1.0f));
-	
 	m_velocity->GetVelocity() = VGet(0.0f, 0.0f, 0.0f); // 初期速度を設定
+}
+
+void Player::End()
+{
+	// プレイヤーのモデルを削除
+	if (m_modelHandle != -1)
+	{
+		MV1DeleteModel(m_modelHandle);
+		m_modelHandle = -1; // モデルハンドルを無効化
+	}
 }
 
 void Player::Update()
@@ -67,23 +74,14 @@ void Player::Update()
 	m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
 
 
-	// 当たり判定の描画
-	DrawSphere3D(
-		GetColPos(),
-		GetColRadius(),
-		kPlayerColor,
-		0xffffff,
-		0xffffff,
-		false);
-	// 立札を読むための当たり判定
-	DrawSphere3D(
-		GetColPos(),
-		GetColRadiusSign(),
-		kPlayerColor,
-		0x00ff00,
-		0x00ff00,
-		false);
 	
+	
+	// ジャンプの更新
+	UpdateJump();
+
+	// 移動の更新
+	UpdateMove();
+	// プレイヤーの移動処理
 	if (isJumping())
 	{
 		/*m_vec.y += kGravity;*/
@@ -99,11 +97,7 @@ void Player::Update()
 
 	
 
-	// ジャンプの更新
-	UpdateJump();
-
-	// 移動の更新
-	UpdateMove();
+	
 
 	// プレイヤーの位置を更新
 	MV1SetPosition(m_modelHandle,m_transform->GetPosition());
@@ -112,7 +106,7 @@ void Player::Update()
 VECTOR Player::GetColPos() const
 {
 	VECTOR result = m_transform->GetPosition();
-	result.y += 80.0f;
+	result.y += kColRadius;
 	return result;
 }
 
@@ -130,43 +124,62 @@ void Player::Draw()
 {
 	// プレイヤーのモデルを描画する
 	MV1DrawModel(m_modelHandle);
+	// 当たり判定の描画
+	DrawSphere3D(
+		GetColPos(),
+		GetColRadius(),
+		kPlayerColor,
+		0xffffff,
+		0xffffff,
+		false);
+	// 立札を読むための当たり判定
+	DrawSphere3D(
+		GetColPos(),
+		GetColRadiusSign(),
+		kPlayerColor,
+		0x00ff00,
+		0x00ff00,
+		false);
 }
 
 void Player::OnDamage(std::shared_ptr<Enemy> enemy)
 {
-	// 敵とぶつかった時、ミスになる
-	// つまり、プレイヤーが一回死ぬ
-	// ここでは、プレイヤーの位置を初期位置に戻す
-	m_transform->SetPosition(VGet(0.0f, 0.0f, 0.0f)); // プレイヤーの位置を初期位置に戻す
-	// 本音を言うなら残り残機の表示、ロードまでしたい
-	// しかし、時間的にも今回はプレイヤーの位置を初期位置に戻すだけにする
+	//// ダメージを受けるとここの処理を使う
+	//// しょぼんのアクションのため、敵とぶつかった際にはミスになる
+	//// つまり、プレイヤーが一回死ぬ
+	//VECTOR tempVec = VSub(GetPos(),);
 
-}
-
-void Player::Final()
-{
+	//// 計算しやすくするためにベクトルの長さをいったん1にする(正規化)
+	//tempVec = VNorm(tempVec);
+	////assert(VSize(tempVec) > 1.0f);
+	//// 長さ1のベクトルに、吹っ飛ぶ力をかける
+	//tempVec = VScale(tempVec, kHitPower);
 
 }
 
 void Player::UpdateJump()
 {
-	if (PadInput::IsTrigger(PAD_INPUT_2)) // ジャンプボタンが押されたら
+	if (PadInput::IsPress(PAD_INPUT_2)) // ジャンプボタンが押されたら
 	{
 		if (m_isJump < kMaxJumpCount) // 1段目または2段目のジャンプ中でない場合
 		{
 			m_isJump++; // ジャンプ状態を更新
 			m_isSky = true; // 空中にいる状態にする
-			//m_vec.y = kJumpPower; // ジャンプ力を適用
 			m_velocity->SetVelocityY(kJumpPower); // ジャンプ力を適用
 		}
-
+	}
+	else if (PadInput::IsTrigger(PAD_INPUT_2)) // ジャンプボタンが離されたら
+	{
+		if (m_isJump > 0) // ジャンプ中の場合
+		{
+			m_isJump--; // ジャンプ状態を1段階下げる
+			m_velocity->SetVelocityY(kJumpPower * 0.5f); // ジャンプ力を半分にする
+		}
 	}
 	else if (!isJumping()) // ジャンプ中でない場合
 	{
 		m_isJump = 0; // ジャンプ状態をリセット
 		m_isSky = false; // 空中状態を解除
-		//m_vec.y += kGravity; // 重力を適用
-		//m_velocity->SetVelocityY(m_velocity->GetVelocityY() + kGravity); // 重力を適用
 		m_velocity->SetVelocityY(0.0f);
 		m_transform->SetPositionY(0.0f); // 地面に戻す
 	}
@@ -187,13 +200,13 @@ void Player::UpdateMove()
 	}
 	
 	// 移動速度を設定
-	// 2ボタン(Bボタン)を押している間はダッシュする
+	// 1ボタン(Aボタン)を押している場合はダッシュ速度
 	if (PadInput::IsPress(PAD_INPUT_1))
 	{
 		// ダッシュ中の移動速度
 		speed = kPlayerDashSpeed;
 	}
-	// 2ボタン(Bボタン)を押していない場合は通常の移動速度
+	// 1ボタン(Aボタン)を押していない場合は通常の移動速度
 	else
 	{
 		// 通常の移動速度

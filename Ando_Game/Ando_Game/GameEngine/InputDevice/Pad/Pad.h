@@ -3,7 +3,7 @@
 
 namespace  
 {  
-constexpr float k_axisMax = 32767.0f; // スティックの最大値  
+	constexpr float k_axisMax = 32767.0f; // スティックの最大値  
 }  
 
 namespace PadInput
@@ -81,8 +81,6 @@ private:
 	{
 		const DINPUT_JOYSTATE& joyState;
 		const DINPUT_JOYSTATE& m_prevJoyPad;
-		bool IsPress(int button) { return(joyState.Buttons) != 0; }// ボタンが押されている場合はtrue,そうでない場合はfalseを返す
-		bool IsTrigger(int button) const { return (joyState.Buttons) && !(m_prevJoyPad.Buttons); }
 	};
 
 
