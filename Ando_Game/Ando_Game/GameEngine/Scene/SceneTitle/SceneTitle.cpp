@@ -42,7 +42,7 @@ SceneManager::SceneKind SceneTitle::Update()
 		m_textVec = -kMoveVec;
 	}
 
-	// ここでは特に何もしないが、必要に応じて更新処理を追加することができる
+	 	// タイトルシーンの更新処理
 	if (PadInput::IsPress(PAD_INPUT_1))
 	{
 		return SceneManager::SceneKind::kSceneMain;

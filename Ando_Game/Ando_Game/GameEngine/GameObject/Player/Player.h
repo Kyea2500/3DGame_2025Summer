@@ -32,6 +32,10 @@ private:
 
 	// プレイヤーが空中にいるか
 	bool m_isSky;		// trueなら空中にいる	falseなら地上にいる
+
+	// プレイヤーが生きているかどうか
+	bool m_isAlive;		// trueなら生きている	falseなら死んでいる
+
 public:
 	Player();
 	
@@ -47,7 +51,7 @@ public:
 	float GetColRadius() const;
 	float GetColRadiusSign() const;
 	void Draw();
-	void OnDamage(std::shared_ptr<Enemy> enemy); // ダメージを受けたときの処理
+	void OnDamage(); // ダメージを受けたときの処理
 
 
 	

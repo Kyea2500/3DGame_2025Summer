@@ -1,5 +1,6 @@
 #include "Player.h"
 #include"../../InputDevice/Pad/Pad.h"
+#include"DxLib.h"
 
 
 namespace
@@ -42,7 +43,8 @@ m_isMoveRight(false),
 m_isMoveLeft(false),
 m_isMove(false),
 m_isJump(0),
-m_isSky(false)
+m_isSky(false),
+m_isAlive(true) // 初期状態では生きている
 {
 	
 }
@@ -74,13 +76,19 @@ void Player::Update()
 	m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
 
 
-	
-	
-	// ジャンプの更新
-	UpdateJump();
+	// プレイヤーが生きているかどうかをチェック
+	if (m_isAlive)
+	{
 
-	// 移動の更新
-	UpdateMove();
+
+
+		// ジャンプの更新
+		UpdateJump();
+
+		// 移動の更新
+		UpdateMove();
+	}
+
 	// プレイヤーの移動処理
 	if (isJumping())
 	{
@@ -124,6 +132,17 @@ void Player::Draw()
 {
 	// プレイヤーのモデルを描画する
 	MV1DrawModel(m_modelHandle);
+	// プレイヤーのモデルのアニメーションを更新
+
+	// 0:Dead 死ぬ
+	// 1:Duck しゃがむ
+	// 3:Idle 待機
+	// 6:Jamp ジャンプする
+	// 7:Jamp_Idle 空中浮遊
+	// 8:Jamp_Land 着地
+	// 11:Run 走る
+	// 14:Walk 歩く
+
 	// 当たり判定の描画
 	DrawSphere3D(
 		GetColPos(),
@@ -142,19 +161,16 @@ void Player::Draw()
 		false);
 }
 
-void Player::OnDamage(std::shared_ptr<Enemy> enemy)
+void Player::OnDamage()
 {
-	//// ダメージを受けるとここの処理を使う
-	//// しょぼんのアクションのため、敵とぶつかった際にはミスになる
-	//// つまり、プレイヤーが一回死ぬ
-	//VECTOR tempVec = VSub(GetPos(),);
+	// ダメージを受けるとここの処理を使う
+	// しょぼんのアクションのため、敵とぶつかった際にはダメージを受けるのではなくミスになる
+	// つまり、プレイヤーが一回死ぬ
+	m_isAlive = false; // プレイヤーが死んだ状態にする
 
-	//// 計算しやすくするためにベクトルの長さをいったん1にする(正規化)
-	//tempVec = VNorm(tempVec);
-	////assert(VSize(tempVec) > 1.0f);
-	//// 長さ1のベクトルに、吹っ飛ぶ力をかける
-	//tempVec = VScale(tempVec, kHitPower);
-
+	// 死んだ場合、操作できるのはおかしい
+	// ここの処理はこれだけだが、その他の処理は他を参照する
+	
 }
 
 void Player::UpdateJump()

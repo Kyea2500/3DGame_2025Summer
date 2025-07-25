@@ -33,18 +33,38 @@ void Enemy::End()
 void Enemy::Update()
 {
 	// 敵はプレイヤーの方向へ移動し、体の向きもプレイヤーのいる方向を向くようにしたい
-	if (EnemyHandle != -1)
-	{
-		MV1SetPosition(EnemyHandle, m_transform->GetPosition()); // 敵の位置を更新
-		MV1SetRotationXYZ(EnemyHandle, m_transform->GetRotation()); // 敵の回転を更新
-	}
-	else
-	{
-		m_transform->SetPosition({ 15.0f, 0.0f, 12.0f }); // モデルがない場合は初期位置に戻す
-		m_transform->SetRotation({ 0.f, 0.f, 0.f }); // モデルがない場合は初期回転に戻す
-	}
+	// でもとりあえずは向きなど考慮せずに、プレイヤーの方向へ移動してほしい
 
-	
+	if ((m_transform->GetPosition().x < m_playerPos.x) || (m_transform->GetPosition().x > m_playerPos.x))
+	{
+		// プレイヤーの位置に向かって移動
+		if (m_transform->GetPosition().x < m_playerPos.x)
+		{
+			m_transform->SetPositionX(m_transform->GetPosition().x + kEnemySpeed * 0.1f); // プレイヤーの方向へ移動
+		}
+		else if (m_transform->GetPosition().x > m_playerPos.x)
+		{
+			m_transform->SetPositionX(m_transform->GetPosition().x - kEnemySpeed * 0.1f); // プレイヤーの方向へ移動
+		}
+	}
+	if ((m_transform->GetPosition().z < m_playerPos.z) || (m_transform->GetPosition().z > m_playerPos.z))
+	{
+		// プレイヤーの位置に向かって移動
+		if (m_transform->GetPosition().z < m_playerPos.z)
+		{
+			m_transform->SetPositionZ(m_transform->GetPosition().z + kEnemySpeed * 0.1f); // プレイヤーの方向へ移動
+		}
+		else if (m_transform->GetPosition().z > m_playerPos.z)
+		{
+			m_transform->SetPositionZ(m_transform->GetPosition().z - kEnemySpeed * 0.1f); // プレイヤーの方向へ移動
+		}
+	}
+	//めためたに着いてくるようになった！ 
+
+
+
+
+	MV1SetPosition(EnemyHandle, m_transform->GetPosition()); // 敵の位置を更新
 }
 
 void Enemy::Draw()
