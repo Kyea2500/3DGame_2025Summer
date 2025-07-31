@@ -95,7 +95,7 @@ void Camera::Update()
 	}
 
 	// カメラの位置を計算
-	VECTOR cameraPos;
+	VECTOR cameraPos{};
 	cameraPos.x = m_transform->GetPosition().x + m_cosParam * std::cos(m_verticalAngle) * 1000.0f; // カメラのX位置
 	cameraPos.y = m_transform->GetPosition().y + m_sinParam * std::cos(m_verticalAngle) * 1000.0f; // カメラのY位置
 	cameraPos.z = m_transform->GetPosition().z + std::sin(m_verticalAngle) * 1000.0f; // カメラのZ位置
@@ -104,26 +104,63 @@ void Camera::Update()
 	// カメラの向きは移動とは違うもう片方のスティックで操作する
 
 	Pad RightStick; // 右スティックの入力を取得
+
+	RightStick.GetRightStick().DOWN();
+
+	RightStick.GetRightStick().UP();
+	RightStick.GetRightStick().LEFT();
+	RightStick.GetRightStick().RIGHT();
+
+	// 右スティックの入力を更新
 	RightStick.Update(); // 右スティックの入力を更新
 	// 右スティックの入力に応じてカメラを回転
-	if (RightStick.GetRightStick().RIGHT()) // 左スティックの右入力
+	if (RightStick.GetRightStick().RIGHT()) // 右スティックの右入力
 	{
-		cameraPos.x+=100; // カメラの位置を更新
+		m_horizontalAngle += 1.0f; // カメラの水平角度を更新
 	}
+	if (RightStick.GetRightStick().LEFT()) // 右スティックの左入力
+	{
+		m_horizontalAngle -= 1.0f; // カメラの水平角度を更新
+	}
+	if (RightStick.GetRightStick().UP()) // 右スティックの上入力
+	{
+		m_verticalAngle += 1.0f; // カメラの垂直角度を更新
+	}
+	if (RightStick.GetRightStick().DOWN()) // 右スティックの下入力
+	{
+		m_verticalAngle -= 1.0f; // カメラの垂直角度を更新
+	}
+	// ↑通っていないことが判明
 
-	if (RightStick.GetRightStick().LEFT())
-	{
-		cameraPos.x-=100; // カメラの位置を更新
-	}
+	// 右スティックの入力を取得
+	Pad Update(); // パッドの入力を更新
+	// 右スティックの入力に応じてカメラを回転
+	//if (PadInput::IsPress(DX_INPUT_PAD_RIGHT)) // 右スティックの右入力
+	//{
+	//	m_horizontalAngle += 1.0f; // カメラの水平角度を更新
+	//}
 
-	if (RightStick.GetRightStick().UP())
-	{
-		cameraPos.y+=100; // カメラの位置を更新
-	}
-	if (RightStick.GetRightStick().DOWN())
-	{
-		cameraPos.y-=100; // カメラの位置を更新
-	}
+
+	//RightStick.Update(); // 右スティックの入力を更新
+	//// 右スティックの入力に応じてカメラを回転
+	//if (RightStick.GetRightStick().RIGHT()) // 左スティックの右入力
+	//{
+	//	cameraPos.x+=100; // カメラの位置を更新
+	//}
+
+	//if (RightStick.GetRightStick().LEFT())
+	//{
+	//	cameraPos.x-=100; // カメラの位置を更新
+	//}
+
+	//if (RightStick.GetRightStick().UP())
+	//{
+	//	cameraPos.y+=100; // カメラの位置を更新
+	//}
+	//if (RightStick.GetRightStick().DOWN())
+	//{
+	//	cameraPos.y-=100; // カメラの位置を更新
+	//}
 	// ↑何故か更新されない。カメラの注視点が悪さをしている可能性がある。
 	// もしくは処理自体が誤っている
 	//結果：処理ミスだと判明

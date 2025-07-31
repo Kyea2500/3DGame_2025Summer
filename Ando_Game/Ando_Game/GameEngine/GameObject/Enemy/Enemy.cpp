@@ -7,7 +7,7 @@ namespace
 	// 敵の当たり判定の色
 	constexpr int kEnemyColor = 16; // 敵の当たり判定の色
 	// 敵の移動速度
-	constexpr float kEnemySpeed = 30.0f; // 敵の移動速度
+	constexpr float kEnemySpeed = 10.0f; // 敵の移動速度
 }
 
 Enemy::Enemy() : EnemyHandle(-1),
@@ -59,12 +59,15 @@ void Enemy::Update()
 			m_transform->SetPositionZ(m_transform->GetPosition().z - kEnemySpeed * 0.1f); // プレイヤーの方向へ移動
 		}
 	}
-	//めためたに着いてくるようになった！ 
-
-
-
-
-	MV1SetPosition(EnemyHandle, m_transform->GetPosition()); // 敵の位置を更新
+	//めためたについてくようになった
+	// とは言えこれでは早すぎるため少しだけ早さを下げる
+	// …っと言いたいところだが、敵をプレイヤーの方向に向く処理を入れるため、一旦後回しにする
+	// 今回は例の通り、プレイヤーの位置に敵の向きを合わせる処理をする
+	// とはいえX軸のみである
+	// そのため、敵の向きはプレイヤーの位置に合わせてX軸のみを向くようにする
+	// プレイヤーの位置＝敵の正面にしたい
+		
+	MV1SetPosition(EnemyHandle, m_transform->GetPosition()); // 敵の位置を更新 
 }
 
 void Enemy::Draw()

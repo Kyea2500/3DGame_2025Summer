@@ -90,6 +90,9 @@ SceneManager::SceneKind SceneMain::Update()
 	// 敵の更新処理
 	m_pEnemy->Update(); // 敵の更新処理
 
+	// プレイヤーと敵との衝突判定
+	if((m_pPlayer->GetColPos())<(m_pEnemy->GetColPos()))
+
 	 return SceneManager::kSceneMain;
 }
 

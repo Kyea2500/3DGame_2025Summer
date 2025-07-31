@@ -29,8 +29,11 @@ namespace
 
 	//// プレイヤーの移動加速度
 	//constexpr float kMoveAccel = 6.00f;
-	// 移動減速率
-	constexpr float kMoveDecRate = 0.80f;
+	
+	// 移動減速率()
+	constexpr float kMoveDecRate = 20.0f;
+
+	// プレイヤーの吹っ飛び率
 	constexpr float kHitPower = 60.0f;
 
 }
@@ -70,18 +73,15 @@ void Player::Update()
 {
 	// パッドの入力を更新
 	PadInput::Update();
-	// m_vec.x *= kMoveDecRate;
-	m_velocity->SetVelocityX(m_velocity->GetVelocityX() * kMoveDecRate);// X軸の速度を減速
-		// m_vec.z *= kMoveDecRate;
-	m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
+	//// m_vec.x *= kMoveDecRate;
+	//m_velocity->SetVelocityX(m_velocity->GetVelocityX() * kMoveDecRate);// X軸の速度を減速
+	//	// m_vec.z *= kMoveDecRate;
+	//m_velocity->SetVelocityZ(m_velocity->GetVelocityZ() * kMoveDecRate); // Z軸の速度を減速
 
 
 	// プレイヤーが生きているかどうかをチェック
 	if (m_isAlive)
 	{
-
-
-
 		// ジャンプの更新
 		UpdateJump();
 
@@ -103,9 +103,6 @@ void Player::Update()
 		m_transform->SetPositionY(0.0f); // 地面に戻す
 	}
 
-	
-
-	
 
 	// プレイヤーの位置を更新
 	MV1SetPosition(m_modelHandle,m_transform->GetPosition());
@@ -206,17 +203,8 @@ void Player::UpdateMove()
 	// プレイヤーの移動処理
 	m_isMove = false; // 移動中フラグを初期化
 
-	if (!m_isMove)
-	{
-		//m_vec.x = 0.0f; // 水平方向の移動ベクトルをリセット
-		m_velocity->SetVelocityX(0.0f); // X軸の速度をリセット
-		
-		//m_vec.z = 0.0f; // 垂直方向の移動ベクトルをリセット
-		m_velocity->SetVelocityZ(0.0f); // Z軸の速度をリセット
-	}
-	
 	// 移動速度を設定
-	// 1ボタン(Aボタン)を押している場合はダッシュ速度
+// 1ボタン(Aボタン)を押している場合はダッシュ速度
 	if (PadInput::IsPress(PAD_INPUT_1))
 	{
 		// ダッシュ中の移動速度
@@ -227,6 +215,15 @@ void Player::UpdateMove()
 	{
 		// 通常の移動速度
 		speed = kPlayerNormalSpeed;
+	}
+
+	if (!m_isMove)
+	{
+		//m_vec.x = 0.0f; // 水平方向の移動ベクトルをリセット
+		m_velocity->SetVelocityX(0.0f); // X軸の速度をリセット
+		
+		//m_vec.z = 0.0f; // 垂直方向の移動ベクトルをリセット
+		m_velocity->SetVelocityZ(0.0f); // Z軸の速度をリセット
 	}
 
 	// 上下左右の入力に応じて移動ベクトルを更新

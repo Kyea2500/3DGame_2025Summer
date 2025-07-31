@@ -44,10 +44,10 @@ Pad::~Pad()
 
 void Pad::Update()
 {
-	//// 前のフレームに押されていたボタンの情報を覚えておく
-	//lastInput = padInput;
-	//// 個のフレームに押されているボタンの情報を取得する
-	//padInput = GetJoypadDirectInputState(DX_INPUT_PAD1, &m_joyPad);
+	// 前のフレームに押されていたボタンの情報を覚えておく
+	lastInput = padInput;
+	// 個のフレームに押されているボタンの情報を取得する
+	padInput = GetJoypadXInputState(DX_INPUT_PAD1, 0);
 
 	
 
@@ -57,7 +57,7 @@ void Pad::Update()
 	// 実際には、パッドの状態を取得してm_joyPadに設定してください。
 	m_prevJoyPad = m_joyPad;
 		// 入力状態を取得
-		if (GetJoypadDirectInputState(DX_INPUT_PAD1, &m_joyPad))
+		if (GetJoypadXInputState(DX_INPUT_PAD1,0))
 		{
 			assert(false && "ゲームパッドが確認されませんでした");
 			return;
