@@ -91,8 +91,18 @@ SceneManager::SceneKind SceneMain::Update()
 	m_pEnemy->Update(); // 敵の更新処理
 
 	// プレイヤーと敵との衝突判定
-	if((m_pPlayer->GetColPos())<(m_pEnemy->GetColPos()))
+	float playerColRadius = m_pPlayer->GetColRadius(); // プレイヤーの当たり判定半径を取得
+	float enemyColRadius = m_pEnemy->GetColRadius(); // 敵の当たり判定半径を取得
+	float PtoE = VSize(VSub(m_pPlayer->GetColPos(), m_pEnemy->GetColPos())); // プレイヤーと敵の距離を計算
+	if (PtoE < playerColRadius + enemyColRadius) // プレイヤーと敵が衝突している場合
+	{
+		//プレイヤーと敵がめり込まないように
+		VECTOR direction = VSub(m_pPlayer->GetColPos(), m_pEnemy->GetColPos()); // プレイヤーから敵へのベクトルを計算
+		VECTOR normalizedDirection = VNorm(direction); // ベクトルを正規化
+		VECTOR pushBack = VScale(normalizedDirection, (playerColRadius + enemyColRadius - PtoE)); // めり込み量を計算
+		m_pPlayer->OnDamage();
 
+	}
 	 return SceneManager::kSceneMain;
 }
 

@@ -165,8 +165,11 @@ void Player::OnDamage()
 	// つまり、プレイヤーが一回死ぬ
 	m_isAlive = false; // プレイヤーが死んだ状態にする
 
-	// 死んだ場合、操作できるのはおかしい
-	// ここの処理はこれだけだが、その他の処理は他を参照する
+	// 敵との衝突時に吹っ飛ぶ処理
+	m_velocity->SetVelocity(VGet(0.0f, kHitPower, 0.0f)); // Y軸に吹っ飛ぶ力を設定
+	// プレイヤーの位置を少し上に移動させる
+	m_transform->SetPositionY(m_transform->GetPosition().y + 50.0f); // Y軸を50上に移動
+	//↑この処理だと、プレイヤーが枝豆みたいに出てくるので、次回、ここを修正する
 	
 }
 
