@@ -169,8 +169,12 @@ void Player::OnDamage()
 	m_velocity->SetVelocity(VGet(0.0f, kHitPower, 0.0f)); // Y軸に吹っ飛ぶ力を設定
 	// プレイヤーの位置を少し上に移動させる
 	m_transform->SetPositionY(m_transform->GetPosition().y + 50.0f); // Y軸を50上に移動
-	//↑この処理だと、プレイヤーが枝豆みたいに出てくるので、次回、ここを修正する
-	
+	//↑この処理だと、プレイヤーが枝豆みたいに出てくる
+	// そのため、ジャンプする処理とする
+	UpdateJump();
+	// ここでジャンプの処理を呼び出すことで、吹っ飛ぶようにする
+	m_isJump = 1; // ジャンプ状態を1段階上げる
+
 }
 
 void Player::UpdateJump()

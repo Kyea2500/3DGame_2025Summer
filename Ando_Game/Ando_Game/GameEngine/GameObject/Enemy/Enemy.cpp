@@ -22,7 +22,7 @@ Enemy::~Enemy()
 void Enemy::Init()
 {
 	// “G‚Ìƒ‚ƒfƒ‹‚ğ“Ç‚İ‚Ş
-	m_transform->SetPosition({ 0.f, 0.f, 0.f }); // ‰ŠúˆÊ’u‚ğİ’è
+	m_transform->SetPosition({ -500.f, 0.f, -500.f }); // ‰ŠúˆÊ’u‚ğİ’è
 	m_transform->SetRotation({ 0.f, 0.f, 0.f }); // ‰Šú‰ñ“]‚ğİ’è
 }
 
