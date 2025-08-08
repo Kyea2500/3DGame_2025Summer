@@ -46,7 +46,6 @@ void Map::Update()
 
 	// マップのモデルを更新
 }
-
 void Map::Draw()
 {
 	// マップのモデルを描画
