@@ -1,9 +1,2 @@
-﻿  Enemy.cpp
-  Map.cpp
-  Player.cpp
-C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\GameObject\Map\Map.cpp(56,35): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\GameObject\Map\Map.cpp(56,59): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\GameObject\Map\Map.cpp(61,19): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\Ando_Game\GameEngine\GameObject\Map\Map.cpp(61,44): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-  コードを生成中...
+﻿  Player.cpp
   Ando_Game.vcxproj -> C:\Users\安藤 歩夢\Documents\GitHub\3DGame_2025Summer\Ando_Game\x64\Debug\Ando_Game.exe
