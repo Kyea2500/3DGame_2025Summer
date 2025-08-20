@@ -31,7 +31,7 @@ namespace
 	//constexpr float kMoveAccel = 6.00f;
 	
 	// ˆÚ“®Œ¸‘¬—¦()
-	constexpr float kMoveDecRate = 20.0f;
+	constexpr float kMoveDecRate = 10.0f;
 
 	// ƒvƒŒƒCƒ„[‚Ì‚Á”ò‚Ñ—¦
 	constexpr float kHitPower = 60.0f;
