@@ -26,8 +26,9 @@ Map::~Map()
 void Map::Init()
 {
 	m_transform->GetPosition() = VGet(0.0f, 0.0f, 0.0f); // 初期位置を設定
-	m_transform->GetRotation() = VGet(0.0f, 0.0f, 0.0f); // 初期回転を設定
 	m_transform->GetScale() = VGet(1.0f, 1.0f, 1.0f); // 初期スケールを設定
+	//MV1SetScale(m_fieldHandle, VGet(8.0f, 8.0f, 8.0f));
+	//MV1SetPosition(m_fieldHandle, VGet(0.0f, -795.0f, 0.0f));
 }
 
 void Map::End()
@@ -39,7 +40,6 @@ void Map::Update()
 	// マップの位置を更新
 	MV1SetPosition(m_mapHandle, m_transform->GetPosition());
 	// マップの回転を更新
-	MV1SetRotationXYZ(m_mapHandle, m_transform->GetRotation());
 	// マップのスケールを更新
 	MV1SetScale(m_mapHandle, m_transform->GetScale());
 

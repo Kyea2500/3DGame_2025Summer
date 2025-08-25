@@ -69,7 +69,6 @@ void Enemy::Update()
 
 
 
-
 	MV1SetPosition(EnemyHandle, m_transform->GetPosition()); // “G‚ÌˆÊ’u‚ğXV 
 }
 
