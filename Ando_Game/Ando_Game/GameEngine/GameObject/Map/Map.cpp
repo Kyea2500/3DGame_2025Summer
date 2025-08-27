@@ -60,4 +60,21 @@ void Map::Draw()
 	{
 		DrawLine3D(VGet(x, 0, -kGridRange), VGet(x, 0, kGridRange), kGridColorX);
 	}
+
+
+}
+bool Map::IsGround()
+{
+	// グリッド線上は地面として扱う(trueにする)
+	for (int z = -kGridRange; z <= kGridRange; z += kGridSize)
+		{
+		for (int x = -kGridRange; x <= kGridRange; x += kGridSize)
+		{
+			if (m_transform->GetPosition().x == x && m_transform->GetPosition().z == z)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }

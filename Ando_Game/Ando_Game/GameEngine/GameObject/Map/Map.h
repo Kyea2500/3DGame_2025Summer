@@ -16,7 +16,7 @@ public:
 	void SetModel(int modelHandle) { m_mapHandle = modelHandle; }
 	void Update();
 	void Draw();
-
+	bool IsGround();
 
 };
 
