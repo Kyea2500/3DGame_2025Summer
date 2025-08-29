@@ -69,16 +69,6 @@ SceneManager::SceneKind SceneMain::Update()
 	// プレイヤーの更新処理
 	m_pPlayer->Update(); // プレイヤーの更新
 	// playerの足元に地形があるか
-	//if (m_pPlayer->IsGrounded()) // プレイヤーが地面に接触している場合
-	//{
-	//	m_pPlayer->SetSky(false); // 空中にいない状態に設定
-	//}
-	//else // プレイヤーが空中にいる場合
-	//{
-	//	m_pPlayer->SetSky(true); // 空中にいる状態に設定
-	//}
-	
-	// playerの足元に地形があるか
 	if (m_pMap->IsGround()) // プレイヤーが地面に接触している場合
 	{
 		m_pPlayer->SetSky(false); // 空中にいない状態に設定

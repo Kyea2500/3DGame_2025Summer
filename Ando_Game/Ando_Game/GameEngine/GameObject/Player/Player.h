@@ -44,7 +44,6 @@ public:
 	void End();
 	void Update();
 	// ‹r‚ª’n–Ê‚ÉÚG‚µ‚Ä‚¢‚é‚©
-	bool IsGrounded() const { return m_isSky == false; }
 	void SetSky(bool isSky) { m_isSky = isSky; } // ‹ó’†ó‘Ô‚ðÝ’è
 	VECTOR GetPos() const { return m_transform->GetPosition(); }
 	VECTOR GetColPos() const;
