@@ -47,7 +47,8 @@ m_isMoveLeft(false),
 m_isMove(false),
 m_isJump(0),
 m_isSky(false),
-m_isAlive(true) // 初期状態では生きている
+m_isAlive(true), // 初期状態では生きている
+m_jampSoundHandle(-1)
 {
 	
 }
@@ -57,6 +58,8 @@ void Player::Init()
 	// プレイヤーの初期位置を設定
 	m_transform->SetPosition(VGet(0.0f, 0.0f, 0.0f));
 	m_velocity->GetVelocity() = VGet(0.0f, 0.0f, 0.0f); // 初期速度を設定
+	// ジャンプ音の読み込み
+	m_jampSoundHandle = LoadSoundMem("../Ando_Game/data/Sound/jump.wav"); // ジャンプ音をメモリにロード
 }
 
 void Player::End()
@@ -66,6 +69,12 @@ void Player::End()
 	{
 		MV1DeleteModel(m_modelHandle);
 		m_modelHandle = -1; // モデルハンドルを無効化
+	}
+	// ジャンプ音の解放
+	if (m_jampSoundHandle != -1)
+	{
+		DeleteSoundMem(m_jampSoundHandle);
+		m_jampSoundHandle = -1; // ジャンプ音ハンドルを無効化
 	}
 }
 
@@ -140,7 +149,8 @@ void Player::Draw()
 	// 11:Run 走る
 	// 14:Walk 歩く
 
-	// 当たり判定の描画
+#ifdef _DEBUG
+	// デバック状態なら当たり判定を描画
 	DrawSphere3D(
 		GetColPos(),
 		GetColRadius(),
@@ -156,6 +166,7 @@ void Player::Draw()
 		0x00ff00,
 		0x00ff00,
 		false);
+#endif // _DEBUG
 }
 
 void Player::OnDamage()
@@ -183,6 +194,7 @@ void Player::UpdateJump()
 {
 	if (PadInput::IsPress(PAD_INPUT_2)) // ジャンプボタンが押されたら
 	{
+
 		if (m_isJump < kMaxJumpCount) // 1段目または2段目のジャンプ中でない場合
 		{
 			m_isJump++; // ジャンプ状態を更新

@@ -14,4 +14,6 @@ private:
 	int m_titleHandle; // タイトルのモデルハンドル
 	int m_textPosX;
 	int m_textVec;
+	int m_BGMHandle;
+	int m_tapSoundHandle;
 };

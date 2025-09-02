@@ -77,13 +77,16 @@ void Enemy::Draw()
 	
 	MV1DrawModel(EnemyHandle);
 
+#ifdef _DEBUG
+	// デバック状態なら当たり判定を描画
 	DrawSphere3D(
 		GetColPos(),
 		GetColRadius(),
 		kEnemyColor,
 		0xff00ff,
 		0xff00ff,
-		false);
+		false;
+#endif // _DEBUG
 	
 }
 

@@ -20,6 +20,7 @@ private:
 	int m_playerHandle;
 	int m_mapHandle; // マップのモデルハンドル
 	int m_enemyHandle; // 敵のモデルハンドル
+	int m_BGMHandle; // BGMのハンドル
 
 	std::shared_ptr<Player> m_pPlayer;	
 	std::shared_ptr<Enemy> m_pEnemy;

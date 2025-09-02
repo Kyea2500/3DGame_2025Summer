@@ -10,7 +10,12 @@ namespace
 	constexpr int kGridColorZ = 0xff0000; // 赤色
 	// 横グリッドの色
 	constexpr int kGridColorX = 0x0000ff; // 青色
-	// 
+	
+	constexpr float PositionX = 8.0f;
+	constexpr float PositionY = 8.0f;
+	constexpr float PositionZ = 8.0f;
+
+	constexpr float ScaleY = -795.0f;
 }
 
 
@@ -25,10 +30,8 @@ Map::~Map()
 
 void Map::Init()
 {
-	m_transform->GetPosition() = VGet(0.0f, 0.0f, 0.0f); // 初期位置を設定
-	m_transform->GetScale() = VGet(1.0f, 1.0f, 1.0f); // 初期スケールを設定
-	//MV1SetScale(m_fieldHandle, VGet(8.0f, 8.0f, 8.0f));
-	//MV1SetPosition(m_fieldHandle, VGet(0.0f, -795.0f, 0.0f));
+	m_transform->SetPosition(VGet(PositionX, PositionY, PositionZ)); // 初期位置を設定
+	m_transform->Setscale(VGet(0.0f, ScaleY, 0.0f)); // 初期スケールを設定
 }
 
 void Map::End()

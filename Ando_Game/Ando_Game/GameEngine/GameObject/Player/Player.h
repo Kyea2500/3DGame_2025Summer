@@ -36,6 +36,9 @@ private:
 	// プレイヤーが生きているかどうか
 	bool m_isAlive;		// trueなら生きている	falseなら死んでいる
 
+	// ジャンプ音
+	int m_jampSoundHandle; // ジャンプ音のハンドル
+
 public:
 	Player();
 	

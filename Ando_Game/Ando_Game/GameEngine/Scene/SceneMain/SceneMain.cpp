@@ -15,7 +15,9 @@ SceneMain::SceneMain()
 	m_pPlayer(nullptr), // プレイヤーのポインタを初期化
 	m_pEnemy(nullptr),	// 敵のポインタを初期化
 	m_pCamera(nullptr), // カメラのポインタを初期化
-	m_pMap(nullptr)		// マップのポインタを初期化
+	m_pMap(nullptr),		// マップのポインタを初期化
+	m_BGMHandle(-1)	// BGMのハンドルを初期化
+	
 {
 }
 
@@ -29,7 +31,7 @@ void SceneMain::Init()
 	m_playerHandle = MV1LoadModel("../Ando_Game/data/Model/player.mv1"); // プレイヤーのモデルを読み込み
 	m_enemyHandle = MV1LoadModel("../Ando_Game/data/Model/enemy.mv1"); // 敵のモデルを読み込み
 	
-	m_mapHandle = MV1LoadModel("../../Ando_Game/data/Model/map.mv1"); // マップのモデルを読み込み
+	m_mapHandle = MV1LoadModel("../Ando_Game/data/Model/map.mv1"); // マップのモデルを読み込み
 	
 
 	// プレイヤーの初期化
@@ -50,6 +52,12 @@ void SceneMain::Init()
 	// カメラの初期化
 	m_pCamera = std::make_shared<Camera>();
 	m_pCamera->Init(); // カメラの初期化
+
+	// BGMの読み込み
+	m_BGMHandle = LoadSoundMem("../Ando_Game/data/Sound/maou_game_dangeon14.mp3"); // BGMをメモリにロード
+	PlaySoundMem(m_BGMHandle, DX_PLAYTYPE_LOOP); // BGMをループ再生
+	// ジャンプ音の読み込み
+
 }
 
 void SceneMain::End()
@@ -64,6 +72,7 @@ void SceneMain::End()
 
 SceneManager::SceneKind SceneMain::Update()
 {
+
 	// マップの更新処理
 	m_pMap->Update(); // マップの更新
 	// プレイヤーの更新処理
@@ -106,6 +115,13 @@ SceneManager::SceneKind SceneMain::Update()
 		m_pPlayer->OnDamage();
 
 	}
+	// プレイヤーが死んでいるかどうかをチェック
+	if (!m_pPlayer->IsAlive())
+	{
+		// プレイヤーが死んでいる場合はシーンをリスタート
+		return SceneManager::kSceneTitle; // ゲームタイトルシーンに遷移
+	}
+	// シーン継続
 	 return SceneManager::kSceneMain;
 }
 
