@@ -187,8 +187,7 @@
               "ViewState": "AgIAAKEAAAAAAAAAAAAMwL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-10T04:45:38.806Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -200,8 +199,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-10T06:54:01.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T06:54:01.461Z"
             },
             {
               "$type": "Document",
@@ -213,8 +211,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Enemy\\Enemy.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-07T01:46:05.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-07T01:46:05.342Z"
             },
             {
               "$type": "Document",
@@ -226,8 +223,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Map\\Map.cpp",
               "ViewState": "AgIAACEAAAAAAAAAAAAAACQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-04T04:54:49.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T04:54:49.253Z"
             },
             {
               "$type": "Document",
@@ -239,8 +235,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Parts\\Transform\\transform.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-20T01:51:00.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T01:51:00.2Z"
             },
             {
               "$type": "Document",
@@ -252,8 +247,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\GameObject\\Player\\Player.h",
               "ViewState": "AgIAABcAAAAAAAAAAAAEwDwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-10T04:52:30.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T04:52:30.273Z"
             },
             {
               "$type": "Document",
@@ -265,8 +259,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\SceneTitle\\SceneTitle.cpp",
               "ViewState": "AgIAAEcAAAAAAAAAAAAUwGAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-04T05:14:52.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T05:14:52.534Z"
             },
             {
               "$type": "Document",
@@ -278,8 +271,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\Manager\\SceneManager.cpp",
               "ViewState": "AgIAAFoAAAAAAAAAAAD4v34AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-01T07:31:35.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-01T07:31:35.384Z"
             },
             {
               "$type": "Document",
@@ -304,8 +296,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\SceneMain\\SceneMain.cpp",
               "ViewState": "AgIAAFoAAAAAAAAAAAAAAHgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-16T00:43:25.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T00:43:25.188Z"
             },
             {
               "$type": "Document",
@@ -317,8 +308,7 @@
               "RelativeToolTip": "Ando_Game\\SceneMiss.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-18T01:52:45.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-18T01:52:45.241Z"
             },
             {
               "$type": "Document",
@@ -330,8 +320,7 @@
               "RelativeToolTip": "Ando_Game\\SceneMiss.cpp",
               "ViewState": "AgIAAAsAAAAAAAAAAAAIwCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-18T03:02:00.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-18T03:02:00.581Z"
             },
             {
               "$type": "Document",
@@ -343,8 +332,7 @@
               "RelativeToolTip": "Ando_Game\\GameEngine\\Scene\\SceneTitle\\SceneTitle.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-16T07:36:02.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T07:36:02.531Z"
             },
             {
               "$type": "Document",
