@@ -8,8 +8,7 @@
 SceneManager::SceneManager()
 	: m_Kind(kSceneTitle), // 初期シーンをタイトルに設定
 	m_pSceneTitle(nullptr),
-	m_pSceneMain(nullptr),
-	m_pSceneClear(nullptr)
+	m_pSceneMain(nullptr)
 {
 
 }
@@ -26,11 +25,6 @@ SceneManager::~SceneManager()
 		m_pSceneMain = nullptr; // メインシーンのポインタを解放
 		delete m_pSceneMain; // メインシーンのメモリを解放
 	}
-	else if (m_pSceneClear != nullptr)
-	{
-		m_pSceneClear = nullptr; // ゲームクリアシーンのポインタを解放
-		delete m_pSceneClear; // ゲームクリアシーンのメモリを解放
-	}
 }
 
 void SceneManager::Init()
@@ -46,11 +40,6 @@ void SceneManager::Init()
 	/*	m_pSceneMain = std::make_shared<SceneMain>();*/
 		m_pSceneMain = new SceneMain;
 		m_pSceneMain->Init();
-		break;
-	case  SceneManager::kSceneClear:
-		/*m_pSceneClear = std::make_shared<SceneClear>();*/
-		m_pSceneClear = new SceneClear;
-		m_pSceneClear->Init();
 		break;
 	case SceneManager::kSceneNum:
 	default:
@@ -73,13 +62,6 @@ void SceneManager::End()
 		m_pSceneMain->End();
 		delete m_pSceneMain;
 		m_pSceneMain = nullptr; // メインシーンのポインタを解放
-
-		break;
-	case  SceneManager::kSceneClear:
-
-		m_pSceneClear->End();
-		delete m_pSceneClear;
-		m_pSceneClear = nullptr; // ゲームクリアシーンのポインタを解放
 		break;
 	case SceneManager::kSceneNum:
 	default:
@@ -135,10 +117,6 @@ void SceneManager::Draw()
 		m_pSceneMain->Draw();
 		break;
 	
-	case  SceneManager::kSceneClear:
-		m_pSceneClear->Draw();
-
-		break;
 	case SceneManager::kSceneNum:
 	default:
 		break;
