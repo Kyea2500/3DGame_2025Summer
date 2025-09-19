@@ -93,8 +93,6 @@ void SceneTitle::Draw()
 	DrawRotaGraph(Game::kScreenWidth / Half, Game::kScreenHeight / Half,
 		magnification, 0,
 		m_titleHandle, true, false);
-	//　タイトル画面に張る予定の画像が一生出力されない
-	// まさかの死んだ後に表示されることが判明。理由がマジでわかんない
 
 	ScreenFlip(); // 裏画面を表画面に切り替える
 }

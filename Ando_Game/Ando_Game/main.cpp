@@ -14,7 +14,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	// フルスクリーンではなく、ウィンドウモードで開くようにする
 	ChangeWindowMode(Game::kDefaultWindowMode);
-	SetWindowText("<Untitle>");
+	SetWindowText("Satadon");
 	// 画面サイズ
 	SetGraphMode(Game::kScreenWidth, Game::kScreenHeight, Game::kColorBitNum);
 

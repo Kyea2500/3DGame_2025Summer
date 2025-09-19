@@ -85,7 +85,7 @@ void Enemy::Draw()
 		kEnemyColor,
 		0xff00ff,
 		0xff00ff,
-		false;
+		false);
 #endif // _DEBUG
 	
 }
